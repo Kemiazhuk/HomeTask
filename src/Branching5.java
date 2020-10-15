@@ -1,0 +1,2 @@
+public class Branching5 {
+}
