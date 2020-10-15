@@ -46,8 +46,8 @@ public class Main {
         prog13.calc();
         Cycles3 prog14 = new Cycles3();
         System.out.println("Sum = " + prog14.calc());
-//        Cycles4 prog15 = new Cycles4();
-//        System.out.println("product = " + prog15.calc());
+        Cycles4 prog15 = new Cycles4();
+        prog15.calc();
         Cycles5 prog16 = new Cycles5();
         prog16.calc();
         Cycles6 prog17 = new Cycles6();
