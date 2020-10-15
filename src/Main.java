@@ -40,6 +40,19 @@ public class Main {
         System.out.println(prog10.calc());
         Branching5 prog11 = new Branching5();
         System.out.println(prog11.calc());
-
+        Cycles1 prog12 = new Cycles1();
+        System.out.println("Sum = " + prog12.calc());
+        Cycles2 prog13 = new Cycles2();
+        prog13.calc();
+        Cycles3 prog14 = new Cycles3();
+        System.out.println("Sum = " + prog14.calc());
+//        Cycles4 prog15 = new Cycles4();
+//        System.out.println("product = " + prog15.calc());
+        Cycles5 prog16 = new Cycles5();
+        prog16.calc();
+        Cycles6 prog17 = new Cycles6();
+        prog17.calc();
+        Cycles7 prog18 = new Cycles7();
+        prog18.calc();
     }
 }

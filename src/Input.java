@@ -36,5 +36,12 @@ public class Input {
 
         return number;
     }
+    public char inputChar() {
+        Scanner scanner = new Scanner(System.in);
+
+        char num = scanner.next().charAt(0);
+
+        return num;
+    }
 }
 
