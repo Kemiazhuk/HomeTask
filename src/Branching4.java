@@ -37,7 +37,15 @@ public class Branching4 {
         System.out.print("Brick Z = ");
         double z = newInput.inputDouble();
         compare(x, y, z);
-        if ((Math.sqrt(a * a + b * b) - Math.sqrt(3) * min) >= max) {
+        if (a < b) {
+            double k = b;
+            b = a;
+            a = k;
+        }
+
+        if (((max <= a) && (min <= b)) || ((max > a) &&
+                (b >= (2 * max * min * a + (max * max - min * min) *
+                        Math.sqrt(max * max + min * min - a * a)) / (max * max + min * min)))) {
             return true;
         } else {
             return false;

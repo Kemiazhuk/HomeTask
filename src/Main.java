@@ -38,6 +38,8 @@ public class Main {
         }
         Branching4 prog10 = new Branching4();
         System.out.println(prog10.calc());
+        Branching5 prog11 = new Branching5();
+        System.out.println(prog11.calc());
 
     }
 }
