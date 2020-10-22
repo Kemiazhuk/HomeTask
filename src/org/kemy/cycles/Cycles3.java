@@ -1,3 +1,5 @@
+package org.kemy.cycles;
+
 public class Cycles3 {
     public int calc(){
         int sum=0;

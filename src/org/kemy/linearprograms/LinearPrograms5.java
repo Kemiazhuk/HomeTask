@@ -1,3 +1,7 @@
+package org.kemy.linearprograms;
+
+import org.kemy.Input;
+
 public class LinearPrograms5 {
     public String calc(){
         Input newInput= new Input();

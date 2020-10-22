@@ -1,13 +1,10 @@
-public class Branching2 {
-    public double min(double x, double y) {
-        if (x > y) {
-            return x;
-        } else {
-            return y;
-        }
-    }
+package org.kemy.branching;
 
-    public double max() {
+import org.kemy.Input;
+
+public class Branching2 {
+
+    public double solve() {
         Input newInput = new Input();
         System.out.print("a=");
         double a = newInput.inputDouble();
@@ -17,10 +14,6 @@ public class Branching2 {
         double c = newInput.inputDouble();
         System.out.print("d=");
         double d = newInput.inputDouble();
-        if (min(a, b) > min(c, d)) {
-            return min(a, b);
-        } else {
-            return min(c, d);
-        }
+        return Math.max(Math.min(a, b),Math.min(c,d));
     }
 }

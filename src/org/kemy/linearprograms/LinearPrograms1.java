@@ -1,3 +1,7 @@
+package org.kemy.linearprograms;
+
+import org.kemy.Input;
+
 public class LinearPrograms1 {
     private double answer;
 

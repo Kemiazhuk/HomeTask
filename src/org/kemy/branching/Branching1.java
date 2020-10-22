@@ -1,3 +1,7 @@
+package org.kemy.branching;
+
+import org.kemy.Input;
+
 public class Branching1 {
     private double a;
     private double b;
@@ -9,13 +13,14 @@ public class Branching1 {
             return false;
         }
     }
+
     public boolean existenceTriangle(){
         Input newInput = new Input();
         System.out.print("angle a=");
         a = newInput.inputDouble();
         System.out.print("angle b=");
         b = newInput.inputDouble();
-        if (a+b<180){
+        if ((a+b<180)&&(a>0)&&(b>0)){
             return true;
         } else {
             return false;

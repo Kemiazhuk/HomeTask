@@ -1,3 +1,7 @@
+package org.kemy.cycles;
+
+import org.kemy.Input;
+
 public class Cycles6 {
     public void calc() {
         Input newInput = new Input();
