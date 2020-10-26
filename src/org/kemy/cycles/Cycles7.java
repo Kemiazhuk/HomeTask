@@ -3,6 +3,7 @@ package org.kemy.cycles;
 import org.kemy.Input;
 
 
+
 public class Cycles7 {
     private boolean flag[] = new boolean[10];
 

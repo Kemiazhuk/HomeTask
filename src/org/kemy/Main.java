@@ -1,10 +1,10 @@
 package org.kemy;
 
-import org.kemy.branching.*;
-import org.kemy.cycles.*;
-import org.kemy.linearprograms.*;
+import org.kemy.oneDimensional.*;
+
 
 public class Main {
+
 
     public static void main(String[] args) {
 //
@@ -58,7 +58,28 @@ public class Main {
 //        prog16.calc();
 //        Cycles6 prog17 = new Cycles6();
 //        prog17.calc();
-        Cycles7 prog18 = new Cycles7();
-        prog18.calc();
+//        Cycles7 prog18 = new Cycles7();
+//        prog18.calc();
+//        OneDimensional1 task1 = new OneDimensional1();
+//        System.out.println(task1.sumMultipl());
+//        OneDimensional2 task2 = new OneDimensional2();
+//        System.out.println(task2.change());
+//        OneDimensional3 task3 = new OneDimensional3();
+//        int[] rez = task3.calc();
+//        System.out.println("- = " + rez[0] + " += " + rez[1] + " 0 =" + rez[2]);
+//        OneDimensional4 task4 = new OneDimensional4();
+//        task4.calc();
+//        OneDimensional5 task5 = new OneDimensional5();
+//        task5.calc();
+//        OneDimensional6 task6 = new OneDimensional6();
+//        task6.calc();
+//        OneDimensional7 task7 = new OneDimensional7();
+//        task7.calc();
+//        OneDimensional8 task8 = new OneDimensional8();
+//        task8.calc();
+//        OneDimensional9 task9 = new OneDimensional9();
+//        task9.calc();
+        OneDimensional10 task9 = new OneDimensional10();
+        task9.calc();
     }
 }
