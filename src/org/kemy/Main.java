@@ -1,6 +1,6 @@
 package org.kemy;
 
-import org.kemy.oneDimensional.*;
+import org.kemy.arraysOfArrays.*;
 
 
 public class Main {
@@ -79,7 +79,27 @@ public class Main {
 //        task8.calc();
 //        OneDimensional9 task9 = new OneDimensional9();
 //        task9.calc();
-        OneDimensional10 task9 = new OneDimensional10();
-        task9.calc();
+//        OneDimensional10 task10 = new OneDimensional10();
+//        task10.calc();
+//        ArraysOfArrays1 arr1 = new ArraysOfArrays1();
+//        arr1.resolve();
+//        ArraysOfArrays23 arr2 = new ArraysOfArrays23();
+//        arr2.resolve();
+//        ArraysOfArrays47 arr3 = new ArraysOfArrays47();
+//        arr3.resolve();
+//        ArraysOfArrays8 arr4 = new ArraysOfArrays8();
+//        arr4.resolve();
+//        ArraysOfArrays9 arr5 = new ArraysOfArrays9();
+//        arr5.resolve();
+//        ArraysOfArrays10 arr6 = new ArraysOfArrays10();
+//        arr6.resolve();
+//        ArraysOfArrays11 arr7 = new ArraysOfArrays11();
+//        arr7.resolve();
+//        ArraysOfArrays1213 arr8 = new ArraysOfArrays1213();
+//        arr8.resolve();
+//        ArraysOfArrays14 arr9 = new ArraysOfArrays14();
+//        arr9.resolve();
+        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
+        arr10.resolve();
     }
 }
