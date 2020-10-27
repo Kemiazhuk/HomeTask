@@ -1,6 +1,7 @@
 package org.kemy;
 
 import org.kemy.arraysOfArrays.*;
+import org.kemy.cycles.Cycles5;
 
 
 public class Main {
@@ -54,8 +55,8 @@ public class Main {
 //        System.out.println("Sum = " + prog14.calc());
 //        Cycles4 prog15 = new Cycles4();
 //        prog15.calc();
-//        Cycles5 prog16 = new Cycles5();
-//        prog16.calc();
+        Cycles5 prog16 = new Cycles5();
+        prog16.calc();
 //        Cycles6 prog17 = new Cycles6();
 //        prog17.calc();
 //        Cycles7 prog18 = new Cycles7();
@@ -99,7 +100,7 @@ public class Main {
 //        arr8.resolve();
 //        ArraysOfArrays14 arr9 = new ArraysOfArrays14();
 //        arr9.resolve();
-        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
-        arr10.resolve();
+//        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
+//        arr10.resolve();
     }
 }
