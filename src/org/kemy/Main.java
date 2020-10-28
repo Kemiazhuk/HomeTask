@@ -1,14 +1,17 @@
 package org.kemy;
 
 import org.kemy.arraysOfArrays.*;
-import org.kemy.cycles.Cycles5;
+import org.kemy.branching.*;
+import org.kemy.cycles.*;
+import org.kemy.linearprograms.*;
+import org.kemy.oneDimensional.*;
 
 
 public class Main {
 
 
     public static void main(String[] args) {
-//
+
 //        LinearPrograms1 prog1 = new LinearPrograms1();
 //        System.out.println("z = " + prog1.calc());
 //
@@ -20,7 +23,7 @@ public class Main {
 //
 //        LinearPrograms4 prog4 = new LinearPrograms4();
 //        System.out.println("math expression is " + prog4.calc());
-
+//
 //        LinearPrograms5 prog5 = new LinearPrograms5();
 //        System.out.println("time is " + prog5.calc());
 //
@@ -55,8 +58,8 @@ public class Main {
 //        System.out.println("Sum = " + prog14.calc());
 //        Cycles4 prog15 = new Cycles4();
 //        prog15.calc();
-        Cycles5 prog16 = new Cycles5();
-        prog16.calc();
+//            Cycles5 prog16 = new Cycles5();
+//            prog16.calc();
 //        Cycles6 prog17 = new Cycles6();
 //        prog17.calc();
 //        Cycles7 prog18 = new Cycles7();
@@ -98,9 +101,11 @@ public class Main {
 //        arr7.resolve();
 //        ArraysOfArrays1213 arr8 = new ArraysOfArrays1213();
 //        arr8.resolve();
-//        ArraysOfArrays14 arr9 = new ArraysOfArrays14();
+//        `ArraysOfArrays14 arr9 = new ArraysOfArrays14();
 //        arr9.resolve();
 //        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
 //        arr10.resolve();
+        ArraysOfArrays16 arr11 = new ArraysOfArrays16();
+        arr11.makeMagicSquare();
     }
 }

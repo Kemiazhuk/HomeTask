@@ -9,22 +9,19 @@ public class Cycles2 {
     public void calc() {
         Input newInput = new Input();
         System.out.print("Enter segment boundary A = ");
-        BigDecimal a = newInput.inputBigDec();
+        double a = newInput.inputDouble();
         System.out.print("Enter segment boundary B = ");
-        BigDecimal b = newInput.inputBigDec();
+        double b = newInput.inputDouble();
         System.out.print("Enter step C = ");
         double c = newInput.inputDouble();
-        BigDecimal step = new BigDecimal(c);
-        BigDecimal arg = new BigDecimal(2);
-        DecimalFormat df= new DecimalFormat("#.####");
-
-        while (a.compareTo(b)<=0) {
-            if (a.compareTo(arg)<=0){
-                System.out.println("X = "+ df.format(a) + " Y = " +df.format(a));
+        double EPSILON = 0.0000001;
+        while (a - b <= EPSILON) {
+            if (a-2 <= EPSILON) {
+                System.out.println(EPSILON+"X = " + a + " Y = " + (-a));
             } else {
-                System.out.println("X = "+ df.format(a) + " Y = " + df.format(a));
+                System.out.println(EPSILON+"X = " + a + " Y = " + a);
             }
-            a=a.add(step);
+            a += c;
         }
     }
 
