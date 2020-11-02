@@ -4,22 +4,22 @@ import org.kemy.Input;
 
 public class ArraysOfArrays9 {
     public void resolve() {
-        Input newInput = new Input();
-        System.out.print("Enter N = ");
-        int n = newInput.inputInt();
-
-        int arr[][] = new int[n][n];
+        System.out.print("Enter quantity string ");
+        int n = Input.inputInt();
+        System.out.print("Enter quantity columns ");
+        int m = Input.inputInt();
+        int arr[][] = new int[n][m];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print("Enter nubers = ");
-                arr[i][j] = newInput.inputInt();
+            for (int j = 0; j < m; j++) {
+                System.out.print("Enter numbers = ");
+                arr[i][j] = Input.inputInt();
             }
         }
         int max = 0;
         int indexColumn = -1;
         for (int i = 0; i < n; i++) {
             int sum = 0;
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 sum += arr[j][i];
             }
             if (sum > max) {

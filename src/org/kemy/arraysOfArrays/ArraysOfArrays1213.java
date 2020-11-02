@@ -1,8 +1,14 @@
 package org.kemy.arraysOfArrays;
 
+import org.kemy.Input;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class ArraysOfArrays1213 {
     public void resolve() {
-        int n=5;
+        System.out.println("Enter size matrix");
+        int n= Input.inputInt();
         int arr[][] = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -10,15 +16,7 @@ public class ArraysOfArrays1213 {
             }
         }
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                for(int k=j; k<n; k++){
-                    if (arr[i][j]>arr[i][k]){
-                        int t=arr[i][j];
-                        arr[i][j]=arr[i][k];
-                        arr[i][k]=t;
-                    }
-                }
-            }
+            Arrays.sort(arr[i]);
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -26,6 +24,7 @@ public class ArraysOfArrays1213 {
             }
             System.out.println();
         }
+
         System.out.println();
 
         for (int i = 0; i < n; i++) {

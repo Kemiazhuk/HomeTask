@@ -85,8 +85,8 @@ public class Main {
 //        task7.calc();
 //        OneDimensional8 task8 = new OneDimensional8();
 //        task8.calc();
-        OneDimensional9 task9 = new OneDimensional9();
-        task9.calc();
+//        OneDimensional9 task9 = new OneDimensional9();
+//        task9.calc();
 //        OneDimensional10 task10 = new OneDimensional10();
 //        task10.calc();
 //        ArraysOfArrays1 arr1 = new ArraysOfArrays1();
@@ -105,12 +105,14 @@ public class Main {
 //        arr7.resolve();
 //        ArraysOfArrays1213 arr8 = new ArraysOfArrays1213();
 //        arr8.resolve();
-//        `ArraysOfArrays14 arr9 = new ArraysOfArrays14();
+//        ArraysOfArrays14 arr9 = new ArraysOfArrays14();
 //        arr9.resolve();
 //        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
 //        arr10.resolve();
 //        ArraysOfArrays16 arr11 = new ArraysOfArrays16();
 //        arr11.makeMagicSquare();
+        Test16 test =  new Test16();
+        test.testMagicSquare();
 //        Sorting1 sort1 = new Sorting1();
 //        sort1.addArray();
 //        Sorting2 sort2= new Sorting2();

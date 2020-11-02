@@ -3,10 +3,16 @@ package org.kemy.arraysOfArrays;
 import org.kemy.Input;
 
 public class ArraysOfArrays16 {
-    public void makeMagicSquare() {
-        Input newInput = new Input();
-        System.out.println("Enter odd size magic square ");
-        int n = newInput.inputInt();
+    public static int [][] makeMagicSquare(int n) {
+//        while (true) {
+//            System.out.println("Enter odd size magic square ");
+//            n = Input.inputInt();
+//            if (n % 2 == 1) {
+//                break;
+//            } else {
+//                System.out.println("Wrong format! Try again");
+//            }
+//        }
         int[][] magicSquare = new int[n][n];
         int count = 2;
         magicSquare[0][n / 2] = 1;
@@ -37,11 +43,12 @@ public class ArraysOfArrays16 {
             i--;
             j++;
         }
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < n; j++) {
-                System.out.print(magicSquare[i][j] + "  ");
-            }
-            System.out.println();
-        }
+//        for (i = 0; i < n; i++) {
+//            for (j = 0; j < n; j++) {
+//                System.out.print(magicSquare[i][j] + "  ");
+//            }
+//            System.out.println();
+//        }
+        return magicSquare;
     }
 }
