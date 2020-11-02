@@ -5,20 +5,24 @@ import org.kemy.Input;
 public class OneDimensional10 {
     public void calc() {
         Input newInput = new Input();
-        System.out.print("Enter N = ");
+        System.out.print("Enter length array ");
         int n = newInput.inputInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter nubers = ");
+            System.out.print("Enter array numbers = ");
             arr[i] = newInput.inputInt();
         }
-
-        for (int i = 1; i < n; i += 2) {
-            arr[i] = 0;
+        int[] newArr = new int[n];
+        int i = 0;
+        int j = 0;
+        while (i != n) {
+            newArr[j]=arr[i];
+            j++;
+            i+=2;
         }
 
-        for (int i = 0; i < n; i++) {
-            System.out.print("   " +arr[i]);
+        for (i = 0; i < n; i++) {
+            System.out.print("   " + newArr[i]);
         }
     }
 }

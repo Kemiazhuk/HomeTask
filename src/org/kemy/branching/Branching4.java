@@ -1,12 +1,13 @@
 package org.kemy.branching;
 
+import org.kemy.Compare;
 import org.kemy.Input;
 
 import java.lang.reflect.Array;
 
 public class Branching4 {
 
-    public double[] compare(double[] array) {
+    public double[] sorting(double[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i; j < array.length; j++) {
                 if (array[i] > array[j]) {
@@ -33,18 +34,20 @@ public class Branching4 {
         side[1] = newInput.inputDouble();
         System.out.print("Brick Z = ");
         side[2] = newInput.inputDouble();
-        side=compare(side);
+        side=sorting(side);
         double firstMinSide=side[0];
         double secondMinSide=side[1];
         double k = Math.min(a, b);
         b = Math.max(a, b);
         a = k;
 
-        if (((secondMinSide <= a) && (firstMinSide <= b)) ||
+        if (((Compare.compareMinMaxEqual(secondMinSide , a, 0.000000001)<=0)
+                && (Compare.compareMinMaxEqual(firstMinSide ,b,0.000000001)<=0)) ||
                 ((secondMinSide > a) &&
-                        (b >= (2 * secondMinSide * firstMinSide * a + (secondMinSide * secondMinSide - firstMinSide * firstMinSide) *
+                        (Compare.compareMinMaxEqual(b , ((2 * secondMinSide * firstMinSide * a +
+                                (secondMinSide * secondMinSide - firstMinSide * firstMinSide) *
                                 Math.sqrt(secondMinSide * secondMinSide + firstMinSide * firstMinSide - a * a)) /
-                                (secondMinSide * secondMinSide + firstMinSide * firstMinSide)))) {
+                                (secondMinSide * secondMinSide + firstMinSide * firstMinSide)), 0.00000001 )>=0))){
             return true;
         } else {
             return false;

@@ -14,7 +14,7 @@ public class OneDimensional5 {
             arr[i] = newInput.inputInt();
         }
         for (int i = 0; i < n; i++) {
-            if (arr[i] * i > i) {
+            if (arr[i] > i) {
                 System.out.print(arr[i] + "  ");
             }
         }

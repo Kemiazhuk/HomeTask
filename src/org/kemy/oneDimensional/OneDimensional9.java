@@ -2,35 +2,43 @@ package org.kemy.oneDimensional;
 
 import org.kemy.Input;
 
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.Map;
+
 public class OneDimensional9 {
     public void calc() {
-        Input newInput = new Input();
-        System.out.print("Enter N = ");
-        int n = newInput.inputInt();
+        System.out.print("Enter length array = ");
+        int n = Input.inputInt();
         int[] arr = new int[n];
+
         for (int i = 0; i < n; i++) {
             System.out.print("Enter nubers = ");
-            arr[i] = newInput.inputInt();
+            arr[i] = Input.inputInt();
         }
-        int count=0;
-        int minCount=0;
-        int indexNum=0;
-
+        HashMap<Integer, Integer> mapArr = new HashMap<Integer, Integer>();
+        int count;
         for (int i = 0; i < n; i++) {
-            count=0;
-            for (int j = i; j < n; j++) {
-                if (arr[i] == arr[j]) {
-                    count++;
-                }
-
-            }
-            if (count>minCount){
-                minCount=count;
-                indexNum=i;
-            } else if((count==minCount)&&(arr[i]<arr[indexNum])){
-                indexNum=i;
+            count = 0;
+            if (mapArr.get(arr[i]) != null) {
+                count = mapArr.get(arr[i]);
+                mapArr.put(arr[i], count++);
+            } else {
+                mapArr.put(arr[i], 1);
             }
         }
-        System.out.println("number is " + arr[indexNum]);
+        Integer minCount = mapArr.get(arr[0]);
+        Integer minNum = arr[0];
+        for (int i = 0; i < n; i++) {
+            if (minCount < mapArr.get(arr[i])) {
+                minCount = mapArr.get(arr[i]);
+                minNum = arr[i];
+
+            } else if (minCount == mapArr.get(arr[i]) && (minNum>arr[i])) {
+                minCount = mapArr.get(arr[i]);
+                minNum = arr[i];
+            }
+        }
+        System.out.println("number is " + minNum);
     }
 }

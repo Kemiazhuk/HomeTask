@@ -7,7 +7,7 @@ public class ArraysOfArrays11 {
         int arr[][] = new int[10][20];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 20; j++) {
-                arr[i][j] =(int) (Math.random()*15);
+                arr[i][j] =(int) (Math.random()*16);
             }
         }
         int c[] = new int[10];

@@ -5,12 +5,14 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Input {
-    private double num;
-    private int numInt;
-    private BigInteger numBigInt;
-    private BigDecimal numBigDec;
+//    private double num;
+//    private int numInt;
+//    private BigInteger numBigInt;
+//    private BigDecimal numBigDec;
 
-    public BigInteger inputBigInt() {
+    public static BigInteger inputBigInt() {
+
+        BigInteger numBigInt= null;
         Scanner scanner = new Scanner(System.in);
         try {
             BigInteger number = new BigInteger(scanner.nextLine());
@@ -21,7 +23,8 @@ public class Input {
         }
         return numBigInt;
     }
-    public BigDecimal inputBigDec() {
+    public static BigDecimal inputBigDec() {
+        BigDecimal numBigDec=null;
         Scanner scanner = new Scanner(System.in);
         try {
             BigDecimal number = new BigDecimal(scanner.nextLine());
@@ -33,7 +36,8 @@ public class Input {
         return numBigDec;
     }
 
-    public double inputDouble() {
+    public static Double inputDouble() {
+        Double num=0.0;
         Scanner scanner = new Scanner(System.in);
         try {
             double number = scanner.nextDouble();
@@ -45,7 +49,8 @@ public class Input {
         return num;
     }
 
-    public int inputInt() {
+    public static int inputInt() {
+        Integer numInt = 0;
         Scanner scanner = new Scanner(System.in);
         try {
             int number = scanner.nextInt();
@@ -57,14 +62,14 @@ public class Input {
         return numInt;
     }
 
-    public String inputStr() {
+    public static String inputStr() {
         Scanner scanner = new Scanner(System.in);
 
         String number = scanner.nextLine();
 
         return number;
     }
-    public char inputChar() {
+    public static char inputChar() {
         Scanner scanner = new Scanner(System.in);
 
         char num = scanner.next().charAt(0);

@@ -9,17 +9,17 @@ public class ArraysOfArrays16 {
         int n = newInput.inputInt();
         int[][] magicSquare = new int[n][n];
         int count = 2;
-        magicSquare[0][n / 2 ] = 1;
-        int i = n-1;
-        int j = n / 2+1;
-        while (count < n * n+1) {
+        magicSquare[0][n / 2] = 1;
+        int i = n - 1;
+        int j = n / 2 + 1;
+        while (count < n * n + 1) {
 
             if ((i < 0) && (j != n)) {
                 i = n - 1;
             } else if ((i >= 0) && (j == n)) {
                 j = 0;
-            } else if ((i<0)&&(j==n)){
-                i+=2;
+            } else if ((i < 0) && (j == n)) {
+                i += 2;
                 j--;
             }
 
@@ -28,7 +28,7 @@ public class ArraysOfArrays16 {
                     magicSquare[i][j] = count;
                     count++;
                 } else if (magicSquare[i][j] != 0) {
-                    i+=2;
+                    i += 2;
                     j--;
                     magicSquare[i][j] = count;
                     count++;
@@ -37,9 +37,9 @@ public class ArraysOfArrays16 {
             i--;
             j++;
         }
-        for ( i=0; i<n; i++){
-            for( j=0; j<n; j++){
-                System.out.print(magicSquare[i][j]+ "  ");
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                System.out.print(magicSquare[i][j] + "  ");
             }
             System.out.println();
         }

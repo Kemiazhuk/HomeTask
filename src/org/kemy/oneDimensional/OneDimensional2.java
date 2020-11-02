@@ -1,5 +1,6 @@
 package org.kemy.oneDimensional;
 
+import org.kemy.Compare;
 import org.kemy.Input;
 
 public class OneDimensional2 {
@@ -14,7 +15,7 @@ public class OneDimensional2 {
         for (int i = 0; i < n; i++) {
             System.out.print("Enter nubers = ");
             arr[i]= newInput.inputDouble();
-            if (arr[i]>z) {
+            if (Compare.compareMinMaxEqual(arr[i],z,0.0000000001)==1) {
                 arr[i]=z;
                 sum++;
             }

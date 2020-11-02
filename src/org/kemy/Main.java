@@ -5,6 +5,10 @@ import org.kemy.branching.*;
 import org.kemy.cycles.*;
 import org.kemy.linearprograms.*;
 import org.kemy.oneDimensional.*;
+import org.kemy.sorting.Sorting1;
+import org.kemy.sorting.Sorting2;
+
+import java.util.ArrayList;
 
 
 public class Main {
@@ -69,8 +73,8 @@ public class Main {
 //        OneDimensional2 task2 = new OneDimensional2();
 //        System.out.println(task2.change());
 //        OneDimensional3 task3 = new OneDimensional3();
-//        int[] rez = task3.calc();
-//        System.out.println("- = " + rez[0] + " += " + rez[1] + " 0 =" + rez[2]);
+//        task3.calc();
+
 //        OneDimensional4 task4 = new OneDimensional4();
 //        task4.calc();
 //        OneDimensional5 task5 = new OneDimensional5();
@@ -81,8 +85,8 @@ public class Main {
 //        task7.calc();
 //        OneDimensional8 task8 = new OneDimensional8();
 //        task8.calc();
-//        OneDimensional9 task9 = new OneDimensional9();
-//        task9.calc();
+        OneDimensional9 task9 = new OneDimensional9();
+        task9.calc();
 //        OneDimensional10 task10 = new OneDimensional10();
 //        task10.calc();
 //        ArraysOfArrays1 arr1 = new ArraysOfArrays1();
@@ -105,7 +109,12 @@ public class Main {
 //        arr9.resolve();
 //        ArraysOfArrays15 arr10 = new ArraysOfArrays15();
 //        arr10.resolve();
-        ArraysOfArrays16 arr11 = new ArraysOfArrays16();
-        arr11.makeMagicSquare();
+//        ArraysOfArrays16 arr11 = new ArraysOfArrays16();
+//        arr11.makeMagicSquare();
+//        Sorting1 sort1 = new Sorting1();
+//        sort1.addArray();
+//        Sorting2 sort2= new Sorting2();
+//        sort2.sortBySelect();
+
     }
 }
