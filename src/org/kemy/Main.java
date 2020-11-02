@@ -1,14 +1,7 @@
 package org.kemy;
 
-import org.kemy.arraysOfArrays.*;
-import org.kemy.branching.*;
-import org.kemy.cycles.*;
-import org.kemy.linearprograms.*;
-import org.kemy.oneDimensional.*;
-import org.kemy.sorting.Sorting1;
-import org.kemy.sorting.Sorting2;
-
-import java.util.ArrayList;
+import org.kemy.sorting.Sorting4;
+import org.kemy.sorting.Sorting5;
 
 
 public class Main {
@@ -111,12 +104,18 @@ public class Main {
 //        arr10.resolve();
 //        ArraysOfArrays16 arr11 = new ArraysOfArrays16();
 //        arr11.makeMagicSquare();
-        Test16 test =  new Test16();
-        test.testMagicSquare();
+//        Test16 test =  new Test16();
+//        test.testMagicSquare();
 //        Sorting1 sort1 = new Sorting1();
 //        sort1.addArray();
 //        Sorting2 sort2= new Sorting2();
 //        sort2.sortBySelect();
+//        Sorting3 sort3= new Sorting3();
+//        sort3.sortByChange();
+//        Sorting4 sort4= new Sorting4();
+//        sort4.sortByInsert();
+//        Sorting5 sort5= new Sorting5();
+//        sort5.sortByShel();
 
     }
 }

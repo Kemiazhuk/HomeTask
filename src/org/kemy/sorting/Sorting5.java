@@ -2,27 +2,25 @@ package org.kemy.sorting;
 
 import org.kemy.Input;
 
-import java.util.ArrayList;
+public class Sorting5 {
 
-public class Sorting2 {
-    public void sortBySelect() {
+    public void sortByShel() {
         System.out.println("Enter length array");
         int n = Input.inputInt();
         int arr[] = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Input.inputInt();
         }
-        for (int i = 0; i < n - 1; i++) {
-            int h = i;
-            for (int j = i + 1; j < n; j++) {
-                if (arr[h] > arr[j]) {
-                    h = j;
+        for (int step = n / 2; step > 0; step /= 2) {
+            for (int i = step; i < n; i++) {
+                for (int j = i - step; j >= 0 && arr[j] > arr[j + step]; j -= step) {
+                    int x = arr[j];
+                    arr[j] = arr[j + step];
+                    arr[j + step] = x;
                 }
             }
-            int k = arr[i];
-            arr[i] = arr[h];
-            arr[h] = k;
         }
+
         for (int i = 0; i < n; i++) {
             System.out.println(arr[i] + "  ");
         }
