@@ -1,5 +1,6 @@
 package org.kemy;
 
+import org.kemy.decomposition.*;
 import org.kemy.sorting.Sorting4;
 import org.kemy.sorting.Sorting5;
 
@@ -116,6 +117,37 @@ public class Main {
 //        sort4.sortByInsert();
 //        Sorting5 sort5= new Sorting5();
 //        sort5.sortByShel();
+//        Decomposition2 dec2 = new Decomposition2();
+//        System.out.println(dec2.nodForFour(Input.inputInt(),Input.inputInt(),Input.inputInt(),Input.inputInt()));
+//        Decomposition3 dec3 = new Decomposition3();
+//        dec3.squareHexagon();
+//        Decomposition4 dec4 = new Decomposition4();
+//        dec4.find();
+//        Decomposition5 dec5 = new Decomposition5();
+//        dec5.secondMax();
+//        Decomposition6 dec6 =new Decomposition6();
+//        dec6.primeNumber();
+//        Decomposition7 dec7 =new Decomposition7();
+//        dec7.sumFactorial();
+//        Decomposition8 dec8 =new Decomposition8();
+//        dec8.task();
+//        Decomposition9 dec9 =new Decomposition9();
+//        dec9.task();
+//        Decomposition10 dec10 =new Decomposition10();
+//        dec10.task();
+//        Decomposition11 dec11 =new Decomposition11();
+//        dec11.task();
+//        Decomposition12 dec12 =new Decomposition12();
+//        dec12.task();
+//        Decomposition13 dec13 = new Decomposition13();
+//        dec13.task();
+//        Decomposition14 dec14 = new Decomposition14();
+//        dec14.task();
+        Decomposition15 dec15 = new Decomposition15();
+        dec15.task();
+
+
+
 
     }
 }
