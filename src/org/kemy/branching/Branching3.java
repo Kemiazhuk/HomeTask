@@ -22,10 +22,6 @@ public class Branching3 {
         System.out.print("y3=");
         double y3 = newInput.inputDouble();
         double rez = (x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3);        // Calculation formula
-        if (Compare.compareEqual(rez, 0.0, 0.0000001)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Compare.compare(rez, 0.0) == 0;
     }
 }

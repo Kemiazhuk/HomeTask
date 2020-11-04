@@ -15,7 +15,7 @@ public class OneDimensional2 {
         for (int i = 0; i < n; i++) {
             System.out.print("Enter nubers = ");
             arr[i]= newInput.inputDouble();
-            if (Compare.compareMinMaxEqual(arr[i],z,0.0000000001)==1) {
+            if (Compare.compare(arr[i],z)==1) {
                 arr[i]=z;
                 sum++;
             }

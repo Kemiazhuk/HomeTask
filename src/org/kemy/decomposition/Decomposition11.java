@@ -7,9 +7,11 @@ public class Decomposition11 {
         System.out.println("Enter two Numbers");
         int a1 = Input.inputInt();
         int a2 = Input.inputInt();
-        if (nums(a1) > nums(a2)) {
+        int numsA1 = nums(a1);
+        int numsA2 = nums(a2);
+        if (numsA1 > numsA2) {
             System.out.println("first");
-        } else if (nums(a1) < nums(a2)) {
+        } else if (numsA1 < numsA2) {
             System.out.println("second");
         } else {
             System.out.println("equally");

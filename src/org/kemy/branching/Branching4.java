@@ -41,13 +41,13 @@ public class Branching4 {
         b = Math.max(a, b);
         a = k;
 
-        if (((Compare.compareMinMaxEqual(secondMinSide , a, 0.000000001)<=0)
-                && (Compare.compareMinMaxEqual(firstMinSide ,b,0.000000001)<=0)) ||
+        if (((Compare.compare(secondMinSide , a)<=0)
+                && (Compare.compare(firstMinSide ,b)<=0)) ||
                 ((secondMinSide > a) &&
-                        (Compare.compareMinMaxEqual(b , ((2 * secondMinSide * firstMinSide * a +
+                        (Compare.compare(b , ((2 * secondMinSide * firstMinSide * a +
                                 (secondMinSide * secondMinSide - firstMinSide * firstMinSide) *
                                 Math.sqrt(secondMinSide * secondMinSide + firstMinSide * firstMinSide - a * a)) /
-                                (secondMinSide * secondMinSide + firstMinSide * firstMinSide)), 0.00000001 )>=0))){
+                                (secondMinSide * secondMinSide + firstMinSide * firstMinSide)))>=0))){
             return true;
         } else {
             return false;

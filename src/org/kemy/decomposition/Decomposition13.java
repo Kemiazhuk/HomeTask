@@ -16,7 +16,7 @@ public class Decomposition13 {
 
     public static boolean primeNumber(int x) {
         boolean flag = true;
-        for (int i = 2; i < x / 2; i++) {
+        for (int i = 2; i < Math.sqrt(x); i++) {
             if (x % i == 0) {
                 flag = false;
                 break;

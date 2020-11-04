@@ -145,6 +145,10 @@ public class Main {
 //        dec14.task();
         Decomposition15 dec15 = new Decomposition15();
         dec15.task();
+//        Decomposition16 dec16 = new Decomposition16();
+//        dec16.task();
+//        Decomposition17 dec17 = new Decomposition17();
+//        dec17.task();
 
 
 
