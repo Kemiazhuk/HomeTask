@@ -1,8 +1,14 @@
 package org.kemy;
 
+import org.kemy.arraysOfArrays.ArraysOfArrays1213;
+import org.kemy.arraysOfArrays.ArraysOfArrays14;
+import org.kemy.arraysOfArrays.ArraysOfArrays9;
+import org.kemy.arraysOfArrays.Test16;
+import org.kemy.branching.Branching3;
 import org.kemy.decomposition.*;
 import org.kemy.sorting.Sorting4;
 import org.kemy.sorting.Sorting5;
+import org.kemy.string.StringHomeTask1;
 
 
 public class Main {
@@ -143,12 +149,14 @@ public class Main {
 //        dec13.task();
 //        Decomposition14 dec14 = new Decomposition14();
 //        dec14.task();
-        Decomposition15 dec15 = new Decomposition15();
-        dec15.task();
+//        Decomposition15 dec15 = new Decomposition15();
+//        dec15.task();
 //        Decomposition16 dec16 = new Decomposition16();
 //        dec16.task();
 //        Decomposition17 dec17 = new Decomposition17();
 //        dec17.task();
+//        StringHomeTask1 str1 = new StringHomeTask1();
+//        str1.task();
 
 
 

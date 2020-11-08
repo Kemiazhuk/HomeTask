@@ -11,31 +11,21 @@ public class ArraysOfArrays14 {
         int col = newInput.inputInt();
         int arr[][] = new int[str][col];
         int count = 0;
-
         for (int i = 0; i < col; i++) {
             count = 0;
             for (int j = 0; j < str; j++) {
-
-                int k = (int) (Math.random() * 10) % 2;
-                if ((k == 1) && (arr[j][i] == 0)) {
-                    arr[j][i] = k;
+                if (count < i + 1) {
+                    arr[j][i] = 1;
                     count++;
                 }
-                int z=0;
-                if ((count < i + 1) && (j == col - 1)) {
-                    while (count != i+1) {
-                        if (arr[z][i]==0){
-                            arr[z][i] =1;
-                            count++;
-                        }
-                        z++;
-                    }
-                    break;
-                }
-                if ((count == i + 1) || (count == str)) {
-                    break;
-                }
-
+            }
+        }
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < str; j++) {
+                    int k = (int) (Math.random()*str);
+                    int t = arr[j][i];
+                    arr[j][i] = arr[k][i];
+                    arr[k][i] = t;
             }
         }
         for (int i = 0; i < str; i++) {
@@ -48,3 +38,4 @@ public class ArraysOfArrays14 {
 
     }
 }
+

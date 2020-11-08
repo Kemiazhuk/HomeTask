@@ -11,7 +11,7 @@ public class Decomposition16 {
         ArrayList<Integer> allNums = new ArrayList<>();
         System.out.println("Enter N - how many digits ");
         int n = Input.inputInt();
-        int sum = 0;
+        long sum = 0;
         int item[] = new int[n];
         int oddArr[] = {1, 3, 5, 7, 9};
         allNums = combinations(allNums, oddArr, item, 0);
@@ -20,7 +20,7 @@ public class Decomposition16 {
         }
         int count = 0;
         while (sum != 0) {
-            int num = sum % 10;
+            long num = sum % 10;
             if (num % 2 == 0) count++;
             sum/=10;
         }

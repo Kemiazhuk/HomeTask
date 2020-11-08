@@ -12,54 +12,36 @@ public class Test16 {
             for (int j = 0; j < f; j++) {
                 sum += matrix[0][j];
             }
-            if ((sumColums(sum, f)) && (sumString(sum, f)) && (sumDiagonal(sum, f))) {
+
+            if (checkSum(sum, f)) {
                 System.out.println("Good square with size " + f);
             }
         }
     }
 
-    public boolean sumColums(int sumNumbers, int size) {
+    public boolean checkSum(int sumNumbers, int size) {
         boolean flag=true;
+        int sum3=0;
+        int sum4=0;
         for (int i = 0; i < size; i++) {
-            int sum=0;
+            int sum1=0;
+            int sum2=0;
+            sum3+=matrix[i][i];
+            sum4+=matrix[i][size-i-1];
+
             for (int j = 0; j < size; j++) {
-                sum+=matrix[i][j];
+                sum1+=matrix[i][j];
+                sum2+=matrix[j][i];
             }
-            if (sum != sumNumbers ){
+            if ((sum1 != sumNumbers )||(sum2 != sumNumbers )){
                 flag =false;
                 break;
             }
+        }
+        if (((sum3 != sumNumbers ))||((sum4 != sumNumbers ))){
+            flag =false;
         }
         return flag;
     }
 
-    public boolean sumString(int sumNumbers, int size) {
-        boolean flag=true;
-        for (int i = 0; i < size; i++) {
-            int sum=0;
-            for (int j = 0; j < size; j++) {
-                sum+=matrix[j][i];
-            }
-            if (sum != sumNumbers ){
-                flag =false;
-                break;
-            }
-        }
-        return flag;
-    }
-
-    public boolean sumDiagonal(int sumNumbers, int size) {
-        boolean flag=true;
-        for (int i = 0; i < 2; i++) {
-            int sum=0;
-            for (int j = 0; j < size; j++) {
-                sum+=matrix[j][size-j-1];
-            }
-            if (sum != sumNumbers ){
-                flag =false;
-                break;
-            }
-        }
-        return flag;
-    }
 }
