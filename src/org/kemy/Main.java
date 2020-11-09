@@ -6,8 +6,7 @@ import org.kemy.arraysOfArrays.ArraysOfArrays9;
 import org.kemy.arraysOfArrays.Test16;
 import org.kemy.branching.Branching3;
 import org.kemy.decomposition.*;
-import org.kemy.sorting.Sorting4;
-import org.kemy.sorting.Sorting5;
+import org.kemy.sorting.*;
 import org.kemy.string.StringHomeTask1;
 
 
@@ -123,6 +122,8 @@ public class Main {
 //        sort4.sortByInsert();
 //        Sorting5 sort5= new Sorting5();
 //        sort5.sortByShel();
+        TestSort sor6 = new TestSort();
+        sor6.test();
 //        Decomposition2 dec2 = new Decomposition2();
 //        System.out.println(dec2.nodForFour(Input.inputInt(),Input.inputInt(),Input.inputInt(),Input.inputInt()));
 //        Decomposition3 dec3 = new Decomposition3();
