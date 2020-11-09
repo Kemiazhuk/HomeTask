@@ -164,9 +164,27 @@ public class Main {
 //        str3.task();
 //        StringHomeTask4 str4 = new StringHomeTask4();
 //        str4.task();
-        StringHomeTask5 str5 = new StringHomeTask5();
-        str5.task();
-
-
+//        StringHomeTask5 str5 = new StringHomeTask5();
+//        str5.task();
+//        StringChapter2Task1 str6 = new StringChapter2Task1();
+//        str6.task();
+//        StringChapter2Task2 str7 = new StringChapter2Task2();
+//        str7.task();
+//        StringChapter2Task3 str8 = new StringChapter2Task3();
+//        str8.task();
+//        StringChapter2Task4 str9 = new StringChapter2Task4();
+//        str9.task();
+//        StringChapter2Task5 str10 = new StringChapter2Task5();
+//        str10.task();
+//        StringChapter2Task6 str11 = new StringChapter2Task6();
+//        str11.task();
+//        StringChapter2Task7 str12 = new StringChapter2Task7();
+//        str12.task();
+//        StringChapter2Task8 str13 = new StringChapter2Task8();
+//        str13.task();
+//        StringChapter2Task9 str14 = new StringChapter2Task9();
+//        str14.task();
+//        StringChapter2Task10 str15 = new StringChapter2Task10();
+//        str15.task();
     }
 }
