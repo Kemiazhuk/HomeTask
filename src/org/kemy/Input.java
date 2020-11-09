@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Input {
+    static Integer numInt = 0;
 //    private double num;
 //    private int numInt;
 //    private BigInteger numBigInt;
@@ -12,19 +13,20 @@ public class Input {
 
     public static BigInteger inputBigInt() {
 
-        BigInteger numBigInt= null;
+        BigInteger numBigInt = null;
         Scanner scanner = new Scanner(System.in);
         try {
             BigInteger number = new BigInteger(scanner.nextLine());
-            numBigInt =number;
+            numBigInt = number;
         } catch (Exception e) {
             System.out.println(e + "XX try again");
             inputBigInt();
         }
         return numBigInt;
     }
+
     public static BigDecimal inputBigDec() {
-        BigDecimal numBigDec=null;
+        BigDecimal numBigDec = null;
         Scanner scanner = new Scanner(System.in);
         try {
             BigDecimal number = new BigDecimal(scanner.nextLine());
@@ -37,7 +39,7 @@ public class Input {
     }
 
     public static Double inputDouble() {
-        Double num=0.0;
+        Double num = 0.0;
         Scanner scanner = new Scanner(System.in);
         try {
             double number = scanner.nextDouble();
@@ -50,7 +52,7 @@ public class Input {
     }
 
     public static int inputInt() {
-        Integer numInt = 0;
+
         Scanner scanner = new Scanner(System.in);
         try {
             int number = scanner.nextInt();
@@ -69,6 +71,7 @@ public class Input {
 
         return number;
     }
+
     public static char inputChar() {
         Scanner scanner = new Scanner(System.in);
 

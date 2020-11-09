@@ -11,12 +11,22 @@ public class StringHomeTask1 {
         int n = Input.inputInt();
         System.out.println("enter variables in camelCase");
         String[] string = new String[n];
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             string[i] = Input.inputStr();
         }
-
-        for (int i= 0; i<n ; i++ ){
+        int index = 0;
+        for (int i = 0; i < n; i++) {
             char[] ch = string[i].toCharArray();
+            for (int j = 0; j < ch.length; j++) {
+                if ((ch[j] >= 'A') && (ch[j] <= 'Z')) {
+                    index = j;
+                }
+            }
+            string[i] = string[i].toLowerCase();
+            string[i] = string[i].substring(0, index) + "_" + string[i].substring(index);
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(string[i]);
         }
 
 

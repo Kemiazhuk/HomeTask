@@ -7,7 +7,7 @@ import org.kemy.arraysOfArrays.Test16;
 import org.kemy.branching.Branching3;
 import org.kemy.decomposition.*;
 import org.kemy.sorting.*;
-import org.kemy.string.StringHomeTask1;
+import org.kemy.string.*;
 
 
 public class Main {
@@ -122,8 +122,8 @@ public class Main {
 //        sort4.sortByInsert();
 //        Sorting5 sort5= new Sorting5();
 //        sort5.sortByShel();
-        TestSort sor6 = new TestSort();
-        sor6.test();
+//        TestSort sor6 = new TestSort();
+//        sor6.test();
 //        Decomposition2 dec2 = new Decomposition2();
 //        System.out.println(dec2.nodForFour(Input.inputInt(),Input.inputInt(),Input.inputInt(),Input.inputInt()));
 //        Decomposition3 dec3 = new Decomposition3();
@@ -158,7 +158,14 @@ public class Main {
 //        dec17.task();
 //        StringHomeTask1 str1 = new StringHomeTask1();
 //        str1.task();
-
+//        StringHomeTask2 str2 = new StringHomeTask2();
+//        str2.task();
+//        StringHomeTask3 str3 = new StringHomeTask3();
+//        str3.task();
+//        StringHomeTask4 str4 = new StringHomeTask4();
+//        str4.task();
+        StringHomeTask5 str5 = new StringHomeTask5();
+        str5.task();
 
 
     }
