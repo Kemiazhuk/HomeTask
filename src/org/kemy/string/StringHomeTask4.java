@@ -11,12 +11,8 @@ public class StringHomeTask4 {
         int count = 0;
         boolean flag = false;
         for (int i = 0; i < ch.length; i++) {
-            while ((ch[i] >= '0') && (ch[i] <= '9')) {
-                if (i < ch.length) {
-                    i++;
-                } else {
-                    break;
-                }
+            while ((ch[i] >= '0') && (ch[i] <= '9')&&(i < ch.length)) {
+                i++;
                 flag = true;
             }
             if (flag) {

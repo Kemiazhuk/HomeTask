@@ -9,11 +9,13 @@ import org.kemy.decomposition.*;
 import org.kemy.sorting.*;
 import org.kemy.string.*;
 
+import java.io.IOException;
+
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        LinearPrograms1 prog1 = new LinearPrograms1();
 //        System.out.println("z = " + prog1.calc());
@@ -186,5 +188,8 @@ public class Main {
 //        str14.task();
 //        StringChapter2Task10 str15 = new StringChapter2Task10();
 //        str15.task();
+//        StringApp str16= new StringApp();
+//        str16.task();
+
     }
 }

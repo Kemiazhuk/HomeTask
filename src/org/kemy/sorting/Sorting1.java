@@ -13,43 +13,25 @@ public class Sorting1 {
         int secondLen = Input.inputInt();
         System.out.println("Enter K ");
         int k = Input.inputInt();
-
-
         int firstAr[] = new int[firstLen];
         int secondAr[] = new int[secondLen];
         for (int i = 0; i < firstLen; i++) {
             System.out.print("Enter nubers first array = ");
-            firstAr[i]=Input.inputInt();
+            firstAr[i] = Input.inputInt();
         }
         for (int i = 0; i < secondLen; i++) {
             System.out.print("Enter nubers second array = ");
-            secondAr[i]= Input.inputInt();
+            secondAr[i] = Input.inputInt();
         }
-        int j=0;
-        int t= firstLen - k -secondLen;
-        for (int i = firstLen-t; i<firstLen; i++){
-            firstAr[i]=firstAr[k+j];
-            j++;
+        if (secondLen+k<=firstLen){
+            System.arraycopy(firstAr,k,firstAr,k+secondLen,firstLen-k-secondLen);
+            System.arraycopy(secondAr,0,firstAr,k,secondLen);
+        }else if (secondLen+k>firstLen){
+            System.arraycopy(secondAr,0,firstAr,k,firstLen-k);
         }
-        j=0;
-        int r=k;
-        while ((j< secondLen)&&(r<firstLen)){
-            firstAr[r]=secondAr[j];
-            j++;
-            r++;
+        for (int i = 0; i < firstLen; i++) {
+            System.out.println(firstAr[i] + "  ");
         }
-        for(int i=0; i<firstLen;i++) {
-            System.out.println(firstAr[i]+ "  ");
-        }
-//        for (int i = k+1; i<firstLen; i++){
-//            j++;
-//            if (j<=secondLen-1) {
-//                int t = secondAr[j];
-//                secondAr[j] = firstAr[i];
-//                firstAr[i] = t;
-//            } else {
-//
-//            }
-//        }
+
     }
 }

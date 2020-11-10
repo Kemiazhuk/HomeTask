@@ -1,5 +1,9 @@
 package org.kemy;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -78,6 +82,23 @@ public class Input {
         char num = scanner.next().charAt(0);
 
         return num;
+    }
+
+    public static StringBuilder inputStrFile() throws IOException {
+
+        BufferedReader buffer = new BufferedReader(new FileReader("src/org/kemy/In.txt"));
+        StringBuilder builder = new StringBuilder();
+        String str = buffer.readLine();
+        while (str != null) {
+            builder.append(str);
+            builder.append('\n');
+            str = buffer.readLine();
+
+        }
+
+        buffer.close();
+
+        return builder;
     }
 }
 
