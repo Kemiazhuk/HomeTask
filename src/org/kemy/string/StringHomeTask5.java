@@ -3,34 +3,26 @@ package org.kemy.string;
 import org.kemy.Input;
 
 public class StringHomeTask5 {
-    public static String task(String string) {
+    public static String task(String str) {
 
         // use this task from StringChapter2Task8
 
-        String twoSpace = "  ";
-        while (string.indexOf(twoSpace) >= 0) {
-            string = string.replaceAll(twoSpace, " ");
+        StringBuilder newStr = new StringBuilder(str);
+        int i = newStr.length() - 1;
+        while ((i >= 1)) {
+            if((newStr.charAt(i) == ' ')&&(newStr.charAt(i-1) == ' ')){
+                newStr.delete(i-1,i);
+            }
+            i--;
         }
-        string = string.trim();
-//        System.out.println(string);
-        return string;
-//        second solution
-//
-//        string = string1;
-//        string = string.trim();
-//        char[] ch = string.toCharArray();
-//        int count = 0;
-//        String rez = new String();
-//        for (int i = 0; i < ch.length; i++) {
-//            rez = rez + ch[i];
-//            if (i + 1 < ch.length) {
-//                while ((ch[i + 1] == ' ') && (ch[i] == ' ')) {
-//                    i++;
-//                }
-//            }
-//        }
-//        System.out.println(rez);
-
+        if(newStr.charAt(newStr.length() - 1) == ' ')  {
+            newStr.delete(newStr.length() - 1,newStr.length());
+        }
+        if(newStr.charAt(0) == ' ')  {
+            newStr.delete(0,1);
+        }
+        System.out.println(newStr);
+        return newStr.toString();
 
     }
 }

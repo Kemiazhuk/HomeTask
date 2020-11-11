@@ -5,12 +5,10 @@ import org.kemy.Input;
 public class StringHomeTask3 {
     public void task(){
         System.out.println("enter string");
-        String string;
-        string = Input.inputStr();
-        char [] ch = string.toCharArray();
+        String string = Input.inputStr();
         int count=0;
-        for (int i=0; i< ch.length; i++){
-            if ((ch[i]>='0')&&(ch[i]<='9')){
+        for (int i=0; i< string.length(); i++){
+            if ((string.charAt(i)>='0')&&(string.charAt(i)<='9')){
                 count++;
             }
         }

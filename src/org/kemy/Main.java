@@ -167,7 +167,7 @@ public class Main {
 //        StringHomeTask4 str4 = new StringHomeTask4();
 //        str4.task();
 //        StringHomeTask5 str5 = new StringHomeTask5();
-//        str5.task();
+//        str5.task("   asdsd sfg sfg sfg sfg ");
 //        StringChapter2Task1 str6 = new StringChapter2Task1();
 //        str6.task();
 //        StringChapter2Task2 str7 = new StringChapter2Task2();

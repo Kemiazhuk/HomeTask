@@ -5,13 +5,11 @@ import org.kemy.Input;
 public class StringHomeTask4 {
     public void task() {
         System.out.println("enter string");
-        String string;
-        string = Input.inputStr();
-        char[] ch = string.toCharArray();
+        String string = Input.inputStr();
         int count = 0;
         boolean flag = false;
-        for (int i = 0; i < ch.length; i++) {
-            while ((ch[i] >= '0') && (ch[i] <= '9')&&(i < ch.length)) {
+        for (int i = 0; i < string.length(); i++) {
+            while ((i < string.length())&&(string.charAt(i)>='0')&&(string.charAt(i)<='9')) {
                 i++;
                 flag = true;
             }

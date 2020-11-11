@@ -76,6 +76,7 @@ public class Input {
         return number;
     }
 
+
     public static char inputChar() {
         Scanner scanner = new Scanner(System.in);
 
