@@ -188,8 +188,8 @@ public class Main {
 //        str14.task();
 //        StringChapter2Task10 str15 = new StringChapter2Task10();
 //        str15.task();
-//        StringApp str16= new StringApp();
-//        str16.task();
+        StringApp str16= new StringApp();
+        str16.task();
 
     }
 }

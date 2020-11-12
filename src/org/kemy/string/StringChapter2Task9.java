@@ -5,14 +5,13 @@ import org.kemy.Input;
 public class StringChapter2Task9 {
     public void task() {
         String str = Input.inputStr();
-        char[] ch = str.toCharArray();
         int countUppercase = 0;
         int countLowercase = 0;
-        for (int i = 0; i < ch.length; i++) {
-            if ((ch[i]>='a')&&(ch[i]<='z')) {
+        for (int i = 0; i < str.length(); i++) {
+            if ((str.charAt(i)>='a')&&(str.charAt(i)<='z')) {
                 countLowercase++;
             }
-            if ((ch[i]>='A')&&(ch[i]<='Z')) {
+            if ((str.charAt(i)>='A')&&(str.charAt(i)<='Z')) {
                 countUppercase++;
             }
         }

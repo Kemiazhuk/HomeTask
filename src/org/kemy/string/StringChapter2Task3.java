@@ -4,21 +4,19 @@ import org.kemy.Input;
 
 public class StringChapter2Task3 {
     public void task() {
-        String str = Input.inputStr();
-        char[] ch = str.toCharArray();
+        StringBuilder str = new StringBuilder(Input.inputStr());
         int i = 0;
         boolean flag = true;
-        while (i<ch.length-i-1) {
-            if (ch[i] != ch[ch.length - i - 1]) {
+        while (i < str.length() - i - 1) {
+            if (str.charAt(i) != str.charAt(str.length() - i - 1)) {
                 flag = false;
+                System.out.println("Not palindrome");
                 break;
             }
             i++;
         }
-        if (flag){
+        if (flag) {
             System.out.println("Palindrome");
-        }else {
-            System.out.println("Not palindrome");
         }
     }
 }
