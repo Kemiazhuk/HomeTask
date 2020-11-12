@@ -4,6 +4,7 @@ import org.kemy.Compare;
 import org.kemy.Input;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +24,7 @@ public class StringApp {
             String[] sent = makeSentence(strParagraphs[i]);
 
             for (int j = 0; j < sent.length; j++) {
+                System.out.print("POINT 2  ");
                 sortList(makeWords(sent[j]));
             }
             for (int j = 0; j < sent.length; j++) {
@@ -42,8 +44,10 @@ public class StringApp {
             strParagraphs[j + 1] = s;
 
         }
+        for (int i = 0; i < strParagraphs.length; i++) {
+            System.out.println("POINT 1  " + strParagraphs[i]);
+        }
     }
-
     public int makeSentenceLength(String str) {
         String[] str1 = str.split("[\\?\\!\\.]");
         return str1.length;
@@ -54,6 +58,7 @@ public class StringApp {
         return str1;
 
     }
+
 
     public ArrayList<String> makeWords(String str) {
         ArrayList<String> strList = new ArrayList();
@@ -79,7 +84,7 @@ public class StringApp {
 
             }
         });
-        System.out.println("POINT 2  " + strList);
+        System.out.println(strList);
     }
 
     public ArrayList<String> searchLexeme(ArrayList strList, final char letter) {
