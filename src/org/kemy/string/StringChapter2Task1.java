@@ -5,16 +5,22 @@ import org.kemy.Input;
 public class StringChapter2Task1 {
     public void task() {
         StringBuilder newStr = new StringBuilder(Input.inputStr());
-        int maxCount = -1;
-        for (int i = 0; i < newStr.length(); i++) {
-            int count = 0;
-            while ((i < newStr.length()) && (newStr.charAt(i) == ' ')) {
+        int maxCount = 0;
+        int count = 1;
+        int j = 0;
+        int i = newStr.indexOf(" ");
+        while (i != -1) {
+            j = i;
+            i = newStr.indexOf(" ", i + 1);
+            if (j + 1 == i) {
                 count++;
-                i++;
+            } else {
+                if (maxCount < count) {
+                    maxCount = count;
+                }
+                count = 1;
             }
-            if (maxCount < count) {
-                maxCount = count;
-            }
+
         }
         System.out.println("count = " + maxCount);
     }

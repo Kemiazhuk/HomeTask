@@ -76,6 +76,12 @@ public class Input {
         return number;
     }
 
+    public static StringBuilder inputStrBuilder() {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder str = new StringBuilder(scanner.nextLine());
+        return str;
+    }
+
 
     public static char inputChar() {
         Scanner scanner = new Scanner(System.in);

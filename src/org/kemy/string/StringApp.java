@@ -1,10 +1,8 @@
 package org.kemy.string;
 
-import org.kemy.Compare;
 import org.kemy.Input;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,47 +12,58 @@ import java.util.regex.Pattern;
 
 public class StringApp {
 
+    public static final String regexParagraphs = "\\n";
+    public static final String regexSentences = "[\\?\\!\\.]";
+    public static final String regexWords = "[A-z-']+";
+    public static final String lexeme = "a";
+
     public void task() throws IOException {
-        char letter = 'a';
+
         String str = new String(Input.inputStrFile());
-        String[] strParagraphs = str.split("\\n");
+        String[] strParagraphs = str.split(regexParagraphs);
         int[] index = new int[strParagraphs.length];
+
         for (int i = 0; i < strParagraphs.length; i++) {
-            index[i] = makeSentenceLength(strParagraphs[i]);
+
             String[] sent = makeSentence(strParagraphs[i]);
+            index[i] = sent.length;
+
 
             for (int j = 0; j < sent.length; j++) {
-                System.out.print("POINT 2  ");
-                sortList(makeWords(sent[j]));
-            }
-            for (int j = 0; j < sent.length; j++) {
-                searchLexeme(makeWords(sent[j]), letter);
-            }
-        }
-        for (int i = 1; i < index.length; i++) {
-            int j = i - 1;
-            int num = index[i];
-            String s = strParagraphs[i];
-            while ((j >= 0) && (index[j] > num)) {
-                index[j + 1] = index[j];
-                strParagraphs[j + 1] = strParagraphs[j];
-                j--;
-            }
-            index[j + 1] = num;
-            strParagraphs[j + 1] = s;
+                ArrayList<String> arrWords = makeWords(sent[j]);
+                System.out.println("Task point 2  " + sortList(arrWords));
+                sortWordsByLexeme(arrWords);
 
+            }
         }
-        for (int i = 0; i < strParagraphs.length; i++) {
-            System.out.println("POINT 1  " + strParagraphs[i]);
+
+        ArrayList<String> listParagraphs = new ArrayList<String>(Arrays.asList(strParagraphs));
+        listParagraphs = sortParagraphsBySentences(listParagraphs);
+        for (String s : listParagraphs) {
+            System.out.println("Task point 1  " + s);
+
         }
     }
-    public int makeSentenceLength(String str) {
-        String[] str1 = str.split("[\\?\\!\\.]");
-        return str1.length;
+
+    public ArrayList<String> sortParagraphsBySentences(ArrayList<String> list) {
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                int count1 = makeSentence(o1).length;
+                int count2 = makeSentence(o2).length;
+                if (count1 < count2) {
+                    return 1;
+                } else if (count1 > count2) {
+                    return -1;
+                } else return o1.compareToIgnoreCase(o2);
+
+            }
+        });
+        return list;
     }
 
     public String[] makeSentence(String str) {
-        String[] str1 = str.split("[\\?\\!\\.]");
+        String[] str1 = str.split(regexSentences);
         return str1;
 
     }
@@ -62,7 +71,7 @@ public class StringApp {
 
     public ArrayList<String> makeWords(String str) {
         ArrayList<String> strList = new ArrayList();
-        Pattern pattern = Pattern.compile("[A-z-']+");
+        Pattern pattern = Pattern.compile(regexWords);
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
             strList.add(matcher.group());
@@ -70,7 +79,7 @@ public class StringApp {
         return strList;
     }
 
-    public void sortList(ArrayList strList) {
+    public ArrayList sortList(ArrayList strList) {
 
         Collections.sort(strList, new Comparator<String>() {
 
@@ -84,17 +93,17 @@ public class StringApp {
 
             }
         });
-        System.out.println(strList);
+        return strList;
     }
 
-    public ArrayList<String> searchLexeme(ArrayList strList, final char letter) {
+    public ArrayList<String> sortWordsByLexeme(ArrayList strList) {
 
         Collections.sort(strList, new Comparator<String>() {
 
             @Override
             public int compare(String o1, String o2) {
-                int count1 = counterLetter(o1, letter);
-                int count2 = counterLetter(o2, letter);
+                int count1 = counterLetter(o1);
+                int count2 = counterLetter(o2);
                 if (count1 < count2) {
                     return 1;
                 } else if (count1 > count2) {
@@ -103,16 +112,16 @@ public class StringApp {
 
             }
         });
-        System.out.println("POINT 3  " + strList);
+        System.out.println("Task point 3  " + strList);
         return strList;
     }
 
-    public int counterLetter(String s, char ch) {
+    public int counterLetter(String s) {
         int counter = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == ch) {
-                counter++;
-            }
+        Pattern pattern = Pattern.compile(lexeme);
+        Matcher matcher = pattern.matcher(s);
+        while (matcher.find()) {
+            counter++;
         }
         return counter;
     }

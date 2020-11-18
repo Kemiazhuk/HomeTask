@@ -8,19 +8,21 @@ public class StringHomeTask1 {
         System.out.println("enter quantity variables");
         int n = Input.inputInt();
         System.out.println("enter variables in camelCase");
-        String[] string = new String[n];
+        StringBuilder[] string = new StringBuilder[n];
         for (int i = 0; i < n; i++) {
-            string[i] = Input.inputStr();
+            string[i] = Input.inputStrBuilder();
         }
-        int index = 0;
+
         for (int i = 0; i < n; i++) {
-            char[] ch = string[i].toCharArray();
-            for (int j = 0; j < ch.length; j++) {
-                if ((ch[j] >= 'A') && (ch[j] <= 'Z')) {
-                    string[i] = string[i].substring(0, j) + "_" + string[i].substring(j);
+            for (int j = 0; j < string[i].length(); j++) {
+                if ((string[i].charAt(j) >= 'A') && (string[i].charAt(j) <= 'Z')) {
+                    int index = string[i].charAt(j) + 32;
+                    char ch = (char) index;
+                    string[i].delete(j, j+1);
+                    string[i].insert(j, "_" + ch);
+
                 }
             }
-            string[i] = string[i].toLowerCase();
         }
         for (int i = 0; i < n; i++) {
             System.out.println(string[i]);

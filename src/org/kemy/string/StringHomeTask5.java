@@ -7,20 +7,42 @@ public class StringHomeTask5 {
 
         // use this task from StringChapter2Task8
 
-        StringBuilder newStr = new StringBuilder(str);
-        int i = newStr.length() - 1;
-        while ((i >= 1)) {
-            if((newStr.charAt(i) == ' ')&&(newStr.charAt(i-1) == ' ')){
-                newStr.delete(i-1,i);
+        StringBuilder string = new StringBuilder(str.trim());
+        StringBuilder newStr = new StringBuilder();
+        int i = 0;
+
+        while (i < string.length()) {
+            if ((string.charAt(i) != ' ')) {
+                newStr.append(string.charAt(i));
+
+            } else if (string.charAt(i - 1) != ' ') {
+                newStr.append(string.charAt(i));
             }
-            i--;
+            i++;
         }
-        if(newStr.charAt(newStr.length() - 1) == ' ')  {
-            newStr.delete(newStr.length() - 1,newStr.length());
+        System.out.println(newStr);
+        return newStr.toString();
+
+    }
+
+    //solution 2
+
+    public static String task2(String str) {
+
+        // use this task from StringChapter2Task8
+
+        StringBuilder string = new StringBuilder(str.trim());
+        StringBuilder newStr = new StringBuilder();
+        int j = 0;
+        int i = string.indexOf(" ");
+        while (i != -1) {
+            if (j + 1 < i) {
+                newStr.append(string.substring(j, i));
+            }
+            j = i;
+            i = string.indexOf(" ", i + 1);
         }
-        if(newStr.charAt(0) == ' ')  {
-            newStr.delete(0,1);
-        }
+        newStr.append(string.substring(j, string.length()));
         System.out.println(newStr);
         return newStr.toString();
 
