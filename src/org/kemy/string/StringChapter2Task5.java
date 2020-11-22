@@ -7,7 +7,7 @@ public class StringChapter2Task5 {
         String str = Input.inputStr();
         int count = 0;
         int i = str.indexOf("a");
-        while ((str.indexOf("a", i) != -1) && (i != -1)) {
+        while (i != -1) {
             count++;
             i = str.indexOf("a", i + 1);
         }

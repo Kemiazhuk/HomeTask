@@ -14,15 +14,20 @@ public class StringHomeTask1 {
         }
 
         for (int i = 0; i < n; i++) {
+            int k = 0;
+            StringBuilder newStr = new StringBuilder();
             for (int j = 0; j < string[i].length(); j++) {
                 if ((string[i].charAt(j) >= 'A') && (string[i].charAt(j) <= 'Z')) {
                     int index = string[i].charAt(j) + 32;
                     char ch = (char) index;
-                    string[i].delete(j, j+1);
-                    string[i].insert(j, "_" + ch);
-
+                    newStr.append(string[i], k, j);
+                    newStr.append("_");
+                    newStr.append(ch);
+                    k = j + 1;
                 }
             }
+            newStr.append(string[i], k, string[i].length());
+            string[i] = newStr;
         }
         for (int i = 0; i < n; i++) {
             System.out.println(string[i]);
