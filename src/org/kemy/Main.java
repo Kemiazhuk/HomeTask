@@ -1,14 +1,5 @@
 package org.kemy;
 
-import org.kemy.arraysOfArrays.ArraysOfArrays1213;
-import org.kemy.arraysOfArrays.ArraysOfArrays14;
-import org.kemy.arraysOfArrays.ArraysOfArrays9;
-import org.kemy.arraysOfArrays.Test16;
-import org.kemy.branching.Branching3;
-import org.kemy.decomposition.*;
-import org.kemy.sorting.*;
-import org.kemy.string.*;
-
 import java.io.IOException;
 
 
@@ -190,7 +181,7 @@ public class Main {
 //        str15.task();
 //        StringApp str16= new StringApp();
 //        str16.task();
-        StringAnalizator str17 = new StringAnalizator();
-        str17.task();
+//        StringAnalizator str17 = new StringAnalizator();
+//        str17.task();
     }
 }
