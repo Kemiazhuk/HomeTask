@@ -3,10 +3,7 @@ package org.kemy.string;
 import org.kemy.Input;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,12 +18,11 @@ public class StringApp {
 
         String str = new String(Input.inputStrFile());
         String[] strParagraphs = str.split(regexParagraphs);
-        int[] index = new int[strParagraphs.length];
+        HashMap<String, Integer> index = new HashMap<String, Integer>();
 
         for (int i = 0; i < strParagraphs.length; i++) {
-
             String[] sent = makeSentence(strParagraphs[i]);
-            index[i] = sent.length;
+            index.put(strParagraphs[i], sent.length);
 
 
             for (int j = 0; j < sent.length; j++) {
@@ -37,20 +33,21 @@ public class StringApp {
             }
         }
 
+
         ArrayList<String> listParagraphs = new ArrayList<String>(Arrays.asList(strParagraphs));
-        listParagraphs = sortParagraphsBySentences(listParagraphs);
+        listParagraphs = sortParagraphsBySentences(listParagraphs, index);
         for (String s : listParagraphs) {
             System.out.println("Task point 1  " + s);
 
         }
     }
 
-    public ArrayList<String> sortParagraphsBySentences(ArrayList<String> list) {
+    public ArrayList<String> sortParagraphsBySentences(ArrayList<String> list, HashMap<String, Integer> newMap) {
         Collections.sort(list, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                int count1 = makeSentence(o1).length;
-                int count2 = makeSentence(o2).length;
+                Integer count1 = newMap.get(o1);
+                Integer count2 = newMap.get(o2);
                 if (count1 < count2) {
                     return 1;
                 } else if (count1 > count2) {

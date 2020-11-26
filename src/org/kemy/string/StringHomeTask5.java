@@ -10,13 +10,16 @@ public class StringHomeTask5 {
         StringBuilder newStr = new StringBuilder();
         int i = 0;
         while (i < string.length()) {
-            if ((string.charAt(i) != ' ')||((newStr.length() !=0)&&newStr.charAt(newStr.length()-1) != ' ')) {
+            while ((i < string.length() - 1) && (string.charAt(i) == ' ') && (string.charAt(i + 1) == ' ')) {
+                i++;
+            }
+            if ((string.charAt(i) != ' ') ||
+                    ((i < string.length()-1) && (newStr.length() > 0) && (newStr.charAt(newStr.length() - 1) != ' '))) {
                 newStr.append(string.charAt(i));
+
             }
             i++;
-        }
-        if (newStr.charAt(newStr.length()-1) == ' '){
-            newStr.deleteCharAt(newStr.length()-1);
+
         }
         System.out.println(newStr);
         return newStr.toString();
