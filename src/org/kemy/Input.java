@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Input {
     static Integer numInt = 0;
+    static long numLong = 0;
 //    private double num;
 //    private int numInt;
 //    private BigInteger numBigInt;
@@ -27,6 +28,19 @@ public class Input {
             inputBigInt();
         }
         return numBigInt;
+    }
+
+    public static long inputLong() {
+
+        Scanner scanner = new Scanner(System.in);
+        try {
+            long number = scanner.nextLong();
+            numLong = number;
+        } catch (Exception e) {
+            System.out.println(e + "XX try again");
+            inputInt();
+        }
+        return numLong;
     }
 
     public static BigDecimal inputBigDec() {

@@ -5,6 +5,8 @@ public class Test2 {
     private String city;
 
     public Test2() {
+        this.name = "Timy";
+        this.city = "Hrodno";
     }
 
     public Test2(String name, String city) {

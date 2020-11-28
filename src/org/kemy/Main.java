@@ -1,10 +1,5 @@
 package org.kemy;
 
-import org.kemy.string.StringAnalizator;
-import org.kemy.string.StringApp;
-import org.kemy.string.StringHomeTask2;
-import org.kemy.string.StringHomeTask5;
-
 import java.io.IOException;
 
 
@@ -184,9 +179,13 @@ public class Main {
 //        str14.task();
 //        StringChapter2Task10 str15 = new StringChapter2Task10();
 //        str15.task();
-        StringApp str16= new StringApp();
-        str16.task();
+//        StringApp str16= new StringApp();
+//        str16.task();
 //        StringAnalizator str17 = new StringAnalizator();
 //        str17.task();
+
+
+
     }
+
 }
