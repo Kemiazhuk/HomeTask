@@ -20,6 +20,6 @@ public class Word {
 
     @Override
     public String toString() {
-        return word + " ";
+        return word + "";
     }
 }

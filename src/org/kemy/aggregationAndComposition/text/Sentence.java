@@ -7,6 +7,9 @@ public class Sentence {
 
     private List<Word> sentences;
 
+    public Sentence() {
+    }
+
     public Sentence(List<Word> sentences) {
         this.sentences = sentences;
     }
@@ -21,7 +24,11 @@ public class Sentence {
 
     @Override
     public String toString() {
-        return sentences +" ";
+        StringBuilder newStr = new StringBuilder();
+        for (Word s :sentences){
+            newStr.append(s.getWord()+ " ");
+        }
+        return newStr.toString();
     }
 }
 
