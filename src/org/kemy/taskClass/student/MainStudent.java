@@ -10,19 +10,15 @@ public class MainStudent {
         students.add(new Student("Helen", 2, new int[]{5, 6, 7, 8, 3}));
         students.add(new Student("Peter", 2, new int[]{9, 9, 9, 9, 9}));
         students.add(new Student("Tim", 3, new int[]{7, 7, 7, 7, 7}));
-        for (Student s : students) {
-            int[] arrRating = s.getRating();
-            boolean flag = true;
-            for (int i = 0; i < arrRating.length; i++) {
-                if ((arrRating[i] != 9 ) && (arrRating[i] != 10)) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                System.out.println("Student " + s.getName()+ " Group " + s.getGroup());
-            }
+        students.add(new Student("Sam", 3, new int[]{9,10,9,10,10}));
+        students.add(new Student("Helen2", 4, new int[]{5, 6, 7, 8, 3}));
+        students.add(new Student("Peter2", 4, new int[]{9, 9, 9, 9, 9}));
+        students.add(new Student("Tim2", 4, new int[]{7, 7, 7, 7, 7}));
+        students.add(new Student("Sam2", 4, new int[]{9,10,9,10,10}));
 
+        for (Student s : students) {
+            s.stundentWithGoodMarks();
         }
+
     }
 }

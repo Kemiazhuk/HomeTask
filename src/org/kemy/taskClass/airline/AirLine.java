@@ -23,8 +23,8 @@ public class AirLine {
     public String toString() {
         return
                 "destinationCity='" + destinationCity + '\'' +
-                ", time=" + time/60 + ":" + (time-(time/60*60)) +
-                ", day='" + days + '\'' ;
+                        ", time=" + time / 60 + ":" + (time - (time / 60 * 60)) +
+                        ", day='" + days + '\'';
     }
 
     public String getDestinationCity() {

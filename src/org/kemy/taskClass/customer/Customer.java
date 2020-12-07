@@ -9,7 +9,7 @@ public class Customer {
      private String creditCard;
      private long bankAccount;
 
-    public Customer(long id, String firstName, String lastName, String patronymic, String address, String creditCard, long bankAccount) {
+    public Customer(long id, String lastName, String firstName, String patronymic, String address, String creditCard, long bankAccount) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,15 +21,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
-                ", address='" + address + '\'' +
-                ", creditCard=" + creditCard +
-                ", bankAccount=" + bankAccount +
-                '}';
+        return firstName +" " + lastName +" "+  patronymic;
     }
 
     public  String getFullName(){

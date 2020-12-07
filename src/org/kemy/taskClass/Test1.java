@@ -1,23 +1,27 @@
 package org.kemy.taskClass;
 
+import org.kemy.Input;
+
 public class Test1 {
+
     private int firstNum = 22;
     private int secondNum = 33;
+
 
     public void print() {
         System.out.println(firstNum + " " + secondNum + " ");
     }
 
-    public void changeNum() {
-        firstNum = firstNum * 44;
-        secondNum = secondNum + 10;
+    public void changeNum(int first, int second) {
+        firstNum = first;
+        secondNum = second;
     }
 
-    public void sumNum() {
-        int rez = firstNum + secondNum;
+    public int sumNum() {
+        return  firstNum + secondNum;
     }
 
-    public void minMax() {
-        int max = Math.max(firstNum, secondNum);
+    public int max() {
+        return Math.max(firstNum, secondNum);
     }
 }

@@ -1,5 +1,8 @@
 package org.kemy;
 
+import org.kemy.string.StringHomeTask2;
+import org.kemy.string.StringHomeTask5;
+
 import java.io.IOException;
 
 
@@ -158,7 +161,7 @@ public class Main {
 //        StringHomeTask4 str4 = new StringHomeTask4();
 //        str4.task();
 //        StringHomeTask5 str5 = new StringHomeTask5();
-//        str5.task("   kgkk k k k k k k k k k hg hhkghl                    pppp    ");
+//        str5.task("   kgkk k k k  k  k  k  k k k hg hhkghl                    pppp    ");
 //        StringChapter2Task1 str6 = new StringChapter2Task1();
 //        str6.task();
 //        StringChapter2Task2 str7 = new StringChapter2Task2();

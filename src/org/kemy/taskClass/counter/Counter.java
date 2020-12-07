@@ -5,10 +5,14 @@ public class Counter {
     private int max;
     private int number;
 
-    public Counter(int min, int max, int number) {
+    public Counter(int min, int max, int number) throws Exception {
         this.min = min;
         this.max = max;
-        this.number = number;
+        if ((number > min) && (number < max)) {
+            this.number = number;
+        } else {
+            throw new IllegalArgumentException("OutOfMaxRange");
+        }
     }
 
     public Counter() {
@@ -17,22 +21,22 @@ public class Counter {
         this.number = 5;
     }
 
-    public int increas() throws Exception {
+    public int increase() throws Exception {
         if (number + 1 > max) {
-            throw new Exception("OutOfMaxRange");
+            throw new IndexOutOfBoundsException("OutOfMaxRange");
         } else {
             number++;
         }
         return number;
     }
 
-    public int decreas() throws Exception {
-        if (number - 1 < min){
-            throw new Exception("OutOfMinRange");
+    public int decrease() throws Exception {
+        if (number - 1 < min) {
+            throw new IndexOutOfBoundsException("OutOfMinRange");
         } else {
             number--;
         }
-            return number;
+        return number;
     }
 
     public int getNumber() {

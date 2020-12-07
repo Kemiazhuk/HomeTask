@@ -24,5 +24,6 @@ public class MainText {
         text.addText(newStr);
 
 
+
     }
 }

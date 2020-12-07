@@ -26,6 +26,17 @@ public class MainTime {
             e.printStackTrace();
             newTime.setSecond(0);
         }
-        System.out.println(newTime.getHour() + ":"+ newTime.getMinute() + ":" + newTime.getSecond());
+        System.out.println(newTime.getHour() + ":" + newTime.getMinute() + ":" + newTime.getSecond());
+
+        System.out.println("Enter how many hours to change the time ");
+        int changeHour = Input.inputInt();
+        System.out.println("Enter how many minutes to change the time");
+        int changeMinute = Input.inputInt();
+        System.out.println("Enter how many seconds to change the time");
+        int changeSecond = Input.inputInt();
+
+        newTime.changeTime(changeHour,changeMinute,changeSecond);
+
+        System.out.println(newTime.getHour() + ":" + newTime.getMinute() + ":" + newTime.getSecond());
     }
 }

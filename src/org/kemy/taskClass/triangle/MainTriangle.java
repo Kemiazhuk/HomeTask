@@ -15,7 +15,9 @@ public class MainTriangle {
         double thirdY = Input.inputDouble();
 
         Triangle triangle = new Triangle(firstX, firstY, secondX, secondY, thirdX, thirdY);
-        System.out.println("Perimeter = "+triangle.calcPerimeter()+ "  Square = " + triangle.calcSquare() + " coordinates point medeian = " + triangle.pointMedians());
+        System.out.println("Perimeter = "+triangle.calcPerimeter()+ "  Square = " + triangle.calcSquare() +
+                " coordinates point medeian X = " + triangle.pointMedians().getKey() +
+                " coordinates point medeian Y = " + triangle.pointMedians().getValue());
 
     }
 }

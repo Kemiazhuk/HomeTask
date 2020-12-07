@@ -9,18 +9,23 @@ public class StringHomeTask5 {
 
         StringBuilder newStr = new StringBuilder();
         int i = 0;
-        while (i < string.length()) {
-            while ((i < string.length() - 1) && (string.charAt(i) == ' ') && (string.charAt(i + 1) == ' ')) {
-                i++;
-            }
-            if ((string.charAt(i) != ' ') ||
-                    ((i < string.length()-1) && (newStr.length() > 0) && (newStr.charAt(newStr.length() - 1) != ' '))) {
-                newStr.append(string.charAt(i));
+        boolean flag = false;
 
+        while (i < string.length()) {
+            if ((string.charAt(i) == ' ')) {
+                flag = true;
+            } else if (string.charAt(i) != ' ') {
+                if ((flag == true) && (newStr.length() > 0)) {
+                    newStr.append(string.charAt(i - 1));
+                    flag = false;
+                }
+                newStr.append(string.charAt(i));
+                flag = false;
             }
             i++;
 
         }
+
         System.out.println(newStr);
         return newStr.toString();
 

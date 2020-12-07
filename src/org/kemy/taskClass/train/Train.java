@@ -40,4 +40,5 @@ public class Train {
     public void setDate(Date date) {
         this.date = date;
     }
+
 }

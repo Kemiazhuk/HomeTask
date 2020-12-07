@@ -1,13 +1,12 @@
 package org.kemy.taskClass.counter;
 
-import org.kemy.taskClass.counter.Counter;
 
 public class MainCounter {
-    public static void main(String[] args) {
-        Counter counter = new Counter(1, 100, 4);
+    public static void main(String[] args) throws Exception {
+        Counter counter = new Counter(1, 100, 2);
         for (int i = 0; i < 100; i++) {
             try {
-                counter.increas();
+                counter.increase();
             } catch (Exception e) {
                 e.printStackTrace();
                 break;
@@ -16,7 +15,7 @@ public class MainCounter {
         System.out.println(counter.getNumber());
         for (int i = 0; i < 100; i++) {
             try {
-                counter.decreas();
+                counter.decrease();
             } catch (Exception e) {
                 e.printStackTrace();
                 break;

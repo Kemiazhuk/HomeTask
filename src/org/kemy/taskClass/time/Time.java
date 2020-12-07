@@ -47,4 +47,12 @@ public class Time {
             this.second = second;
         }
     }
+
+    public void changeTime(int hourForChange, int minuteForChange, int secondForChange) {
+        int changedTime = 0;
+        changedTime = (hourForChange + hour) * 3600 + (minuteForChange + minute) * 60 + secondForChange + second;
+        hour = changedTime / 3600;
+        minute = (changedTime - hour * 3600) / 60;
+        second = changedTime - hour * 3600 - minute * 60;
+    }
 }

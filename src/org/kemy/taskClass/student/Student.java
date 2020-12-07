@@ -18,23 +18,24 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getGroup() {
         return group;
-    }
-
-    public void setGroup(int group) {
-        this.group = group;
     }
 
     public int[] getRating() {
         return rating;
     }
 
-    public void setRating(int[] rating) {
-        this.rating = rating;
+    public void stundentWithGoodMarks() {
+        boolean flag = true;
+        for (int i = 0; i < rating.length; i++) {
+            if ((rating[i] != 9) && (rating[i] != 10)) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            System.out.println("Student " + name + " Group " + group);
+        }
     }
 }
