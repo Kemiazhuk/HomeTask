@@ -1,46 +1,14 @@
 package org.kemy.taskClass.triangle;
 
-import javafx.util.Pair;
-
 public class Triangle {
-    private double pointX1;
-    private double pointY1;
-    private double pointX2;
-    private double pointY2;
-    private double pointX3;
-    private double pointY3;
+    Point firstPoint;
+    Point secondPoint;
+    Point thirdPoint;
 
-    public double getPointX1() {
-        return pointX1;
-    }
-
-    public double getPointY1() {
-        return pointY1;
-    }
-
-    public double getPointX2() {
-        return pointX2;
-    }
-
-    public double getPointY2() {
-        return pointY2;
-    }
-
-    public double getPointX3() {
-        return pointX3;
-    }
-
-    public double getPointY3() {
-        return pointY3;
-    }
-
-    public Triangle(double pointX1, double pointY1, double pointX2, double pointY2, double pointX3, double pointY3) {
-        this.pointX1 = pointX1;
-        this.pointY1 = pointY1;
-        this.pointX2 = pointX2;
-        this.pointY2 = pointY2;
-        this.pointX3 = pointX3;
-        this.pointY3 = pointY3;
+    public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint) {
+        this.firstPoint = firstPoint;
+        this.secondPoint = secondPoint;
+        this.thirdPoint = thirdPoint;
     }
 
     public double distace(double x1, double y1, double x2, double y2) {
@@ -49,22 +17,23 @@ public class Triangle {
 
     public double calcPerimeter() {
 
-        return distace(getPointX1(), getPointY1(), getPointX2(), getPointY2()) +
-                distace(getPointX1(), getPointY1(), getPointX3(), getPointY3()) +
-                distace(getPointX2(), getPointY2(), getPointX3(), getPointY3());
+        return distace(firstPoint.getPointX(), firstPoint.getPointY(), secondPoint.getPointX(), secondPoint.getPointY()) +
+                distace(firstPoint.getPointX(), firstPoint.getPointY(), thirdPoint.getPointX(),thirdPoint.getPointY()) +
+                distace(secondPoint.getPointX(), secondPoint.getPointY(), thirdPoint.getPointX(),thirdPoint.getPointY());
     }
 
     public double calcSquare() {
         double halfPer = calcPerimeter() / 2;
-        return Math.sqrt(halfPer * (halfPer - distace(getPointX1(), getPointY1(), getPointX2(), getPointY2())) *
-                (halfPer - distace(getPointX1(), getPointY1(), getPointX3(), getPointY3())) *
-                (halfPer - distace(getPointX2(), getPointY2(), getPointX3(), getPointY3())));
+        return Math.sqrt(halfPer * (halfPer - distace(firstPoint.getPointX(), firstPoint.getPointY(), secondPoint.getPointX(), secondPoint.getPointY())) *
+                (halfPer - distace(firstPoint.getPointX(), firstPoint.getPointY(), thirdPoint.getPointX(),thirdPoint.getPointY())) *
+                (halfPer - distace(secondPoint.getPointX(), secondPoint.getPointY(), thirdPoint.getPointX(),thirdPoint.getPointY())));
     }
 
-    public Pair pointMedians() {
-        Pair<Double,Double> newPair = new Pair<>((getPointX1() + getPointX2() + getPointX3()) / 3, (getPointY1() + getPointY2() + getPointY3()) / 3);
+    public Point pointMedians() {
+        Point medianPoint = new Point ((firstPoint.getPointX() + secondPoint.getPointX() + thirdPoint.getPointX()) / 3,
+                                                        (firstPoint.getPointY() + secondPoint.getPointY() + thirdPoint.getPointY()) / 3);
 
-        return newPair;
+        return medianPoint;
     }
 
 }

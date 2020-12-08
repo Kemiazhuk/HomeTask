@@ -7,10 +7,6 @@ public class Engine {
         this.engines = engines;
     }
 
-    @Override
-    public String toString() {
-        return engines + "";
-    }
 
     public int getEngines() {
         return engines;
@@ -18,5 +14,13 @@ public class Engine {
 
     public void setEngines(int engines) {
         this.engines = engines;
+    }
+
+    public void startEngineCar() {
+        System.out.println("Start engine");
+    }
+
+    public void stopEngineCar() {
+        System.out.println("Stop engine");
     }
 }
