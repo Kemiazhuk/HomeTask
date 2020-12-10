@@ -1,6 +1,6 @@
 package org.kemy.aggregationAndComposition.touristPackages;
 
-public class Packages {
+public class Package {
     private String typeOfRest;
     private String transport;
     private String food;
@@ -15,7 +15,7 @@ public class Packages {
         this.price = price;
     }
 
-    public Packages(String typeOfRest, String transport, String food, int days, int price) {
+    public Package(String typeOfRest, String transport, String food, int days, int price) {
         this.typeOfRest = typeOfRest;
         this.transport = transport;
         this.food = food;

@@ -7,6 +7,7 @@ import java.util.*;
 
 public class MainText {
     public static void main(String[] args) {
+        String title = "TEXT TEXT TEXT";
         Word word1 = new Word("Hello");
         Word word2 = new Word("Java");
         Word word3 = new Word("world.");
@@ -16,12 +17,14 @@ public class MainText {
         List<Sentence> constSent = new ArrayList<>();
         constSent.add(sentence1);
         constSent.add(sentence2);
-        Text text = new Text(constSent);
+        Text text = new Text(constSent,title);
 
         System.out.println("Enter new text to add");
+        String newText = Input.inputStr();
+        System.out.println("Title of the text " + text.getTitle());
+        text.splitByWord(newText);
+        System.out.println(text.toString());
 
-        List<String> newStr = new ArrayList<>(Arrays.asList(Input.inputStr().split(" ")));
-        text.addText(newStr);
 
 
 
