@@ -32,7 +32,7 @@ public class State {
         for (Region r : region) {
             for (District d : r.getDistrict()) {
                 for (City c : d.getCity()) {
-                    System.out.println(c.getSquare());
+                    System.out.println(c.getName() + " - " + c.getSquare());
                 }
             }
         }
@@ -43,7 +43,7 @@ public class State {
             for (District d : r.getDistrict()) {
                 for (City c : d.getCity()) {
                     if (c.isRegionCenter()) {
-                        System.out.println(c.getName());
+                        System.out.println(c.getName() + " is region center");
                     }
                 }
             }

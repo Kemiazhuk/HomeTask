@@ -2,26 +2,29 @@ package org.kemy.aggregationAndComposition.bills;
 
 import javafx.util.Pair;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class AllBankBills {
+    private ArrayList<Bills> allBills = new ArrayList<>();
 
-    private List<Bills> allBills;
-
-    public AllBankBills(List<Bills> allBills) {
-        this.allBills = allBills;
+    public AllBankBills() {
     }
 
-    public List<Bills> sortByAccountAmount() {
+    public void addNewBill(Bills bill) {
+        allBills.add(bill);
+    }
+
+    public ArrayList<Bills> sortByAccountAmount() {
         Collections.sort(allBills, Comparator.comparing(Bills::getAccountAmount));
         return allBills;
     }
 
-    @Override
-    public String toString() {
-        return allBills + " ";
+    public int lastBillId() {
+        return allBills.get(allBills.size() - 1).getId();
     }
 
     public double[] allAccountAmount() {
@@ -36,5 +39,23 @@ public class AllBankBills {
         }
         double allSum[] = {sum, positiveSum, negativeSum};
         return allSum;
+    }
+
+    public List<Integer> findAllBillsByNameCustomer(String name) {
+        List<Integer> idList = new ArrayList<>();
+        for (Bills b : allBills) {
+            if (b.getNameCustomer().compareTo(name) == 0) {
+                idList.add(b.getId());
+            }
+        }
+        return idList;
+    }
+
+    public void findToLockUnlock(int id) {
+        for (Bills b : allBills) {
+            if (b.getId() == id){
+                b.lockUnlock();
+            }
+        }
     }
 }

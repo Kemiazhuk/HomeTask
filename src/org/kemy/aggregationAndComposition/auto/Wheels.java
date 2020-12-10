@@ -11,10 +11,17 @@ public class Wheels {
         this.wheelsRage = wheelsRage;
     }
 
-    @Override
-    public String toString() {
-        return "wheelsName=" + Arrays.toString(wheelsName) +
-                ", wheelsRage=" + wheelsRage;
+
+    public void changeWheel(int number, String name) {
+        takeOffWheel(number);
+        wheelsName[number-1] = name;
+        System.out.println("put on a new wheel");
+        System.out.println("Now we have " + Arrays.toString(wheelsName));
+
+    }
+
+    public void takeOffWheel(int number){
+        System.out.println("Take of " + number + " wheel");
     }
 
     public String[] getWheelsName() {

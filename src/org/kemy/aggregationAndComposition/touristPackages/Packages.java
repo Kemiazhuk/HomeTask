@@ -25,12 +25,10 @@ public class Packages {
 
     @Override
     public String toString() {
-        return "Packages{" +
-                "typeOfRest='" + typeOfRest + '\'' +
+        return  "typeOfRest='" + typeOfRest + '\'' +
                 ", transport='" + transport + '\'' +
                 ", food='" + food + '\'' +
-                ", days=" + days +
-                '}';
+                ", days=" + days;
     }
 
     public String getTypeOfRest() {

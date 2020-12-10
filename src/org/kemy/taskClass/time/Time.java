@@ -26,10 +26,9 @@ public class Time {
         return minute;
     }
 
-    public void setMinute(int minute) throws Exception {
+    public void setMinute(int minute)  {
         if ((minute > 60) || (minute < 0)) {
             this.minute = 0;
-            throw new Exception("MinuteOutOfRange");
         } else {
             this.minute = minute;
         }
@@ -39,10 +38,9 @@ public class Time {
         return second;
     }
 
-    public void setSecond(int second) throws Exception {
+    public void setSecond(int second)  {
         if ((second > 60) || (second < 0)) {
             this.second = 0;
-            throw new Exception("SecondOutOfRange");
         } else {
             this.second = second;
         }

@@ -4,6 +4,15 @@ public class Auto {
     private Wheels wheels;
     private Engine engines;
     private String brandAuto;
+    private int fuelLevel = 10;
+
+    public int getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(int fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
 
     public Auto(Wheels wheels, Engine engines, String brandAuto) {
         this.wheels = wheels;
@@ -11,35 +20,28 @@ public class Auto {
         this.brandAuto = brandAuto;
     }
 
-    public void changeWheel(int number, String name) {
-        takeOffWheel(number);
-        String[] newStr = wheels.getWheelsName();
-        newStr[number] = name;
-        System.out.println("put on a new wheel");
-        wheels.setWheelsName(newStr);
-        System.out.println(wheels.toString());
+    public void actions() {
+        String nameNewWheel = "Bridgestone";
+        int numberChangeWheel = 3;
+        wheels.changeWheel(numberChangeWheel, nameNewWheel);
+
+        int addFuel = 33;
+        pumpFuel(addFuel);
+
 
     }
 
-    public void takeOffWheel(int number){
-        System.out.println("Take of " + number + " wheel");
-    }
-
-
-
-
-    public void drive() {
-        System.out.println("Drive car");
-    }
-
-    public void pumpFuel(int engine) {
+    public void carGoes() {
         engines.startEngineCar();
-        drive();
+        System.out.println("The car goes");
+    }
+
+    public void pumpFuel(int addFuel) {
+        carGoes();
         engines.stopEngineCar();
         System.out.println("Pump Fuel");
-        int level = engines.getEngines() + engine;
-        engines.setEngines(level);
-        System.out.println("Level fuel = " + engines.toString());
+        fuelLevel += addFuel;
+        System.out.println("Level fuel = " + fuelLevel);
     }
 
     public String getBrandAuto() {

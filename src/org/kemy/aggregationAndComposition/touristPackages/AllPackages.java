@@ -1,11 +1,13 @@
 package org.kemy.aggregationAndComposition.touristPackages;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class AllPackages {
     private List<Packages> allPackages;
+
+
+    public AllPackages() {
+    }
 
     public AllPackages(List<Packages> allPackages) {
         this.allPackages = allPackages;
@@ -15,35 +17,43 @@ public class AllPackages {
         Collections.sort(allPackages, Comparator.comparing(Packages::getPrice));
     }
 
-    public void findPackagesWithNecessaryTransport(String transport) {
-        for (Packages pack : allPackages) {
+    public ArrayList<Packages> findPackagesWithNecessaryTransport(ArrayList<Packages> packages, String transport) {
+        ArrayList<Packages> newPackages = new ArrayList<>();
+        for (Packages pack : packages) {
             if (pack.getTransport().compareTo(transport) == 0) {
-                System.out.println(pack.toString());
+                newPackages.add(pack);
             }
         }
+        return newPackages;
     }
 
-    public void findPackagesWithNecessaryRest(String rest) {
+    public ArrayList<Packages> findPackagesWithNecessaryRest(String rest) {
+        ArrayList<Packages> packages = new ArrayList<>();
         for (Packages pack : allPackages) {
             if (pack.getTypeOfRest().compareTo(rest) == 0) {
-                System.out.println(pack.toString());
+                packages.add(pack);
             }
         }
+        return packages;
     }
 
-    public void findPackagesWithNecessaryDaysOfRest(int days) {
-        for (Packages pack : allPackages) {
+    public ArrayList<Packages>  findPackagesWithNecessaryDaysOfRest(ArrayList<Packages> packages, int days) {
+        ArrayList<Packages> newPackages = new ArrayList<>();
+        for (Packages pack : packages) {
             if (pack.getDays() == days) {
-                System.out.println(pack.toString());
+                newPackages.add(pack);
             }
         }
+        return newPackages;
     }
 
-    public void findPackagesWithNecessaryFood(String food) {
-        for (Packages pack: allPackages){
-            if (pack.getFood().compareTo(food) == 0)  {
-                System.out.println(pack.toString());
+    public ArrayList<Packages> findPackagesWithNecessaryFood(ArrayList<Packages> packages,String food) {
+        ArrayList<Packages> newPackages = new ArrayList<>();
+        for (Packages pack : packages) {
+            if (pack.getFood().compareTo(food) == 0) {
+                newPackages.add(pack);
             }
         }
+        return newPackages;
     }
 }

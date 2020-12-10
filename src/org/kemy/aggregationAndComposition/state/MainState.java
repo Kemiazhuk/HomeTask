@@ -18,7 +18,7 @@ public class MainState {
         Region region2 = new Region("Minskaja", Arrays.asList(district2));
 
         State state = new State(Arrays.asList(region1, region2));
-        System.out.println(state.findCapital());
+        System.out.println("Capital is " + state.findCapital());
         System.out.println("Quantity of regions = " + state.getRegion().size());
         state.square();
         state.findRegionCenter();
