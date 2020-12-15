@@ -15,12 +15,11 @@ public class AllPackages {
 
     public ArrayList<Package> findPackagesWithNecessaryTransport(ArrayList<Package> aPackages, String [] transports) {
         ArrayList<Package> newPackages = new ArrayList<>();
-        int i=0;
         for (Package pack : aPackages) {
-            String tr = pack.getTransport();
+            Transports tr = pack.getTransport();
             for (String s : transports) {
-                if (tr.compareTo(s) == 0){
-                    aPackages.add(pack);
+                if (tr.compareTo(Transports.valueOf(s)) == 0){
+                    newPackages.add(pack);
                 }
             }
         }
@@ -30,9 +29,9 @@ public class AllPackages {
     public ArrayList<Package> findPackagesWithNecessaryRest(String[] restNum) {
         ArrayList<Package> aPackages = new ArrayList<>();
         for (Package pack : allPackages) {
-            String str = pack.getTypeOfRest();
+            TypeOfRest str = pack.getTypeOfRest();
             for (String st : restNum) {
-                if (str.compareTo(st) == 0) {
+                if (str.compareTo(TypeOfRest.valueOf(st)) == 0) {
                     aPackages.add(pack);
                 }
             }
@@ -54,9 +53,9 @@ public class AllPackages {
     public ArrayList<Package> findPackagesWithNecessaryFood(ArrayList<Package> aPackages, String [] food) {
         ArrayList<Package> newPackages = new ArrayList<>();
         for (Package pack : aPackages) {
-            String f = pack.getFood();
+            Food f = pack.getFood();
             for(String s : food) {
-                if (s.compareTo(f) == 0) {
+                if (f.compareTo(Food.valueOf(s)) == 0) {
                     newPackages.add(pack);
                 }
             }

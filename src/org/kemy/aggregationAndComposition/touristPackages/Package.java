@@ -1,9 +1,9 @@
 package org.kemy.aggregationAndComposition.touristPackages;
 
 public class Package {
-    private String typeOfRest;
-    private String transport;
-    private String food;
+    private TypeOfRest typeOfRest;
+    private Transports transport;
+    private Food food;
     private int days;
     private int price;
 
@@ -11,11 +11,8 @@ public class Package {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
-    public Package(String typeOfRest, String transport, String food, int days, int price) {
+    public Package(TypeOfRest typeOfRest, Transports transport, Food food, int days, int price) {
         this.typeOfRest = typeOfRest;
         this.transport = transport;
         this.food = food;
@@ -31,35 +28,23 @@ public class Package {
                 ", days=" + days;
     }
 
-    public String getTypeOfRest() {
+    public TypeOfRest getTypeOfRest() {
         return typeOfRest;
     }
 
-    public void setTypeOfRest(String typeOfRest) {
-        this.typeOfRest = typeOfRest;
-    }
 
-    public String getTransport() {
+    public Transports getTransport() {
         return transport;
     }
 
-    public void setTransport(String transport) {
-        this.transport = transport;
-    }
 
-    public String getFood() {
+    public Food getFood() {
         return food;
     }
 
-    public void setFood(String food) {
-        this.food = food;
-    }
 
     public int getDays() {
         return days;
     }
 
-    public void setDays(int days) {
-        this.days = days;
-    }
 }
