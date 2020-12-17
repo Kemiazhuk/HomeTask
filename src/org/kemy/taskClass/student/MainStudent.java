@@ -17,7 +17,10 @@ public class MainStudent {
         students.add(new Student("Sam2", 4, new int[]{9,10,9,10,10}));
 
         for (Student s : students) {
-            s.stundentWithGoodMarks();
+            if (s.studentWithGoodMarks()){
+                System.out.println(s.toString());
+            };
+
         }
 
     }

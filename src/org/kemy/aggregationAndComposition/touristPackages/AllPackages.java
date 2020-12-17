@@ -9,9 +9,11 @@ public class AllPackages {
         this.allPackages = allPackages;
     }
 
-    public void sortByCost() {
-        Collections.sort(allPackages, Comparator.comparing(Package::getPrice));
+    public ArrayList<Package> sortByPrice(ArrayList<Package> clientPack) {
+        Collections.sort(clientPack, Comparator.comparing(Package::getPrice));
+        return clientPack;
     }
+
 
     public ArrayList<Package> findPackagesWithNecessaryTransport(ArrayList<Package> aPackages, String [] transports) {
         ArrayList<Package> newPackages = new ArrayList<>();
@@ -62,4 +64,6 @@ public class AllPackages {
         }
         return newPackages;
     }
+
+
 }

@@ -14,10 +14,9 @@ public class StringHomeTask5 {
         while (i < string.length()) {
             if ((string.charAt(i) == ' ')) {
                 flag = true;
-            } else if (string.charAt(i) != ' ') {
+            } else {
                 if ((flag == true) && (newStr.length() > 0)) {
-                    newStr.append(string.charAt(i - 1));
-                    flag = false;
+                    newStr.append(" ");
                 }
                 newStr.append(string.charAt(i));
                 flag = false;

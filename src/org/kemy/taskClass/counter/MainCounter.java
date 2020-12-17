@@ -7,8 +7,8 @@ public class MainCounter {
         for (int i = 0; i < 100; i++) {
             try {
                 counter.increase();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception IndexOutOfBoundsException) {
+//                e.printStackTrace();
                 break;
             }
         }

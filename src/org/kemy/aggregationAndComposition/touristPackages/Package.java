@@ -22,10 +22,11 @@ public class Package {
 
     @Override
     public String toString() {
-        return  "typeOfRest='" + typeOfRest + '\'' +
-                ", transport='" + transport + '\'' +
-                ", food='" + food + '\'' +
-                ", days=" + days;
+        return typeOfRest +
+                " by " + transport +
+                " with " + food + " food " +
+                " on " + days + " days " +
+                " and cost " + price + "$";
     }
 
     public TypeOfRest getTypeOfRest() {

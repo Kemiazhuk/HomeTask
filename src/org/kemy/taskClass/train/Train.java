@@ -7,7 +7,6 @@ import java.util.Date;
 public class Train {
     private String city;
     private int numTrain;
-    private String dateStr;
     private Date date;
 
     public Train(String city, int numTrain, String dateStr) throws ParseException {

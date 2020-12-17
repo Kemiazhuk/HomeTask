@@ -27,6 +27,8 @@ public class MainTrain {
             System.out.println("Number train " + t.getNumTrain() + " City " + t.getCity() + " Date " + t.getDate());
         }
         System.out.println("enter number train");
+
+        // metod
         int number = Input.inputInt();
         boolean flag = false;
         for (Train t : trains) {
@@ -54,8 +56,10 @@ public class MainTrain {
             public int compare(Train o1, Train o2) {
                 if (o1.getNumTrain() > o2.getNumTrain()) {
                     return 1;
-                } else {
+                } else if (o1.getNumTrain() < o2.getNumTrain()) {
                     return -1;
+                } else {
+                    return 0;
                 }
             }
 
@@ -70,10 +74,10 @@ public class MainTrain {
             public int compare(Train o1, Train o2) {
                 int compareCity = o1.getCity().compareTo(o2.getCity());
                 int compareDate = o1.getDate().compareTo(o2.getDate());
-                if (compareCity == 0) {
-                    return compareDate;
-                } else {
+                if (compareCity != 0) {
                     return compareCity;
+                } else {
+                    return compareDate;
                 }
             }
         });

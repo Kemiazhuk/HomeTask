@@ -1,6 +1,7 @@
 package org.kemy.taskClass.student;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Student {
     private String name;
@@ -26,16 +27,21 @@ public class Student {
         return rating;
     }
 
-    public void stundentWithGoodMarks() {
-        boolean flag = true;
+    public boolean studentWithGoodMarks() {
         for (int i = 0; i < rating.length; i++) {
             if ((rating[i] != 9) && (rating[i] != 10)) {
-                flag = false;
-                break;
+                return false;
             }
         }
-        if (flag) {
-            System.out.println("Student " + name + " Group " + group);
-        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", group=" + group +
+                ", rating=" + Arrays.toString(rating) +
+                '}';
     }
 }

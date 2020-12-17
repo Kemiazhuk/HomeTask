@@ -20,24 +20,32 @@ public class MainPack {
         packageForClient.add(package3);
         packageForClient.add(package4);
 
-        System.out.println("choose the rest : TOURISM, HEALTH, SHOPPING");
+        System.out.println("choose the rest : TOURISM, HEALTH, SHOPPING or NO_MATTER");
         String[] restStr = Input.inputStr().split(" ");
-
-        System.out.println("choose transport(s) BUS, AIRPLANE, TRAIN, SHIP");
+        if (restStr[0].compareTo("NO_MATTER") != 0) {
+            packageForClient = allPackages.findPackagesWithNecessaryRest(restStr);
+        }
+        System.out.println("choose transport(s) BUS, AIRPLANE, TRAIN, SHIP or NO_MATTER");
         String[] transports = Input.inputStr().split(" ");
-
-        System.out.println("Enter how many days of rest you need");
-        int days = Input.inputInt();
-
+        if (transports[0].compareTo("NO_MATTER") != 0) {
+            packageForClient = allPackages.findPackagesWithNecessaryTransport(packageForClient, transports);
+        }
+        System.out.println("Enter how many days of rest you need or NO_MATTER");
+        String d = Input.inputStr();
+        if (d.compareTo("NO_MATTER") != 0) {
+            int days = Integer.valueOf(d);
+            packageForClient = allPackages.findPackagesWithNecessaryDaysOfRest(packageForClient, days);
+        }
         System.out.println("what food do you need ALL_INCLUSIVE, BREAKFAST, BREAKFAST_AND_DINNER, WITHOUT_FOOD;");
         String[] food = Input.inputStr().split(" ");
-
-        packageForClient = allPackages.findPackagesWithNecessaryRest(restStr);
-        packageForClient = allPackages.findPackagesWithNecessaryTransport(packageForClient, transports);
-        packageForClient = allPackages.findPackagesWithNecessaryDaysOfRest(packageForClient, days);
-        packageForClient = allPackages.findPackagesWithNecessaryFood(packageForClient, food);
-        if (!packageForClient.isEmpty()){
-            System.out.println(packageForClient);
+        if (food[0].compareTo("NO_MATTER") != 0) {
+            packageForClient = allPackages.findPackagesWithNecessaryFood(packageForClient, food);
+        }
+        packageForClient = allPackages.sortByPrice(packageForClient);
+        if (!packageForClient.isEmpty()) {
+            for (Package p : packageForClient) {
+                System.out.println(p.toString());
+            }
         } else {
             System.out.println("Nothing found choose other parameter");
         }
