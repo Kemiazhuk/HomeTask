@@ -1,37 +1,31 @@
 package org.kemy.aggregationAndComposition.bills;
 
-public class Bills {
-    private int id;
+public class Bill {
+    private int billNumber;
     private boolean block;
     private double accountAmount;
     private String nameCustomer;
+    public static int counterNumber = 1;
 
-    public Bills(int id, boolean block, double accountAmount, String nameCustomer) {
-        this.id = id;
+    public Bill(int accountNumber, boolean block, double accountAmount, String nameCustomer) {
+        this.billNumber = accountNumber;
         this.block = block;
         this.accountAmount = accountAmount;
         this.nameCustomer = nameCustomer;
     }
 
-    public int getId() {
-        return id;
+    public int getAccountNumber() {
+        return billNumber;
     }
 
     public boolean isBlock() {
         return block;
     }
 
-//    public void setBlock(boolean block) {
-//        this.block = block;
-//    }
-
-    public void lockUnlock(){
-        if (block) {
-            block = false;
-        } else {
-            block = true;
-        }
+    public void setBlock(boolean block) {
+        this.block = block;
     }
+
     public double getAccountAmount() {
         return accountAmount;
     }
@@ -40,17 +34,10 @@ public class Bills {
         this.accountAmount = accountAmount;
     }
 
-    public String getNameCustomer() {
-        return nameCustomer;
-    }
-
-    public void setNameCustomer(String nameCustomer) {
-        this.nameCustomer = nameCustomer;
-    }
-
     @Override
     public String toString() {
-        return "id = " + id +
+
+        return "billNumber = " + billNumber +
                 " nameCustomer = " + nameCustomer +
                 " accountAmount = " + accountAmount +
                 " state of an account is " + ((block) ? "locked" : "unlocked");

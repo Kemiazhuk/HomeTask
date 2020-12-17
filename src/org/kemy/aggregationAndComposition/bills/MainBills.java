@@ -3,48 +3,53 @@ package org.kemy.aggregationAndComposition.bills;
 import org.kemy.Input;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainBills {
     public static void main(String[] args) {
-        System.out.println("Enter your name");
-        Client firstClient = new Client(Input.inputStr());
 
-        Bills bills1 = new Bills(1,true, 4556.26, "Ivanov");
-        Bills bills2 = new Bills(2,false, 34556.26, "Petrov");
-        Bills bills3 = new Bills(3,false, -400.26, "Sidorov");
+        Client firstClient = new Client(Client.counterId++, "Ivanov");
+        Client secondClient = new Client(Client.counterId++, "Petrov");
+        Client thirdClient = new Client(Client.counterId++, "Sidorov");
 
-        AllBankBills allBankBills = new AllBankBills();
-        allBankBills.addNewBill(bills1);
-        allBankBills.addNewBill(bills2);
-        allBankBills.addNewBill(bills3);
-        allBankBills.addNewBill(firstClient.createBill(allBankBills.lastBillId()));
-        System.out.println("Enter your name");
+        firstClient.createBill(4556.26);
+        firstClient.createBill(-6.26);
+        secondClient.createBill(34555.44);
+        thirdClient.createBill(12.11);
+        thirdClient.createBill(100.11);
+        thirdClient.createBill(-1.11);
 
-        for (Bills b : allBankBills.sortByAccountAmount()){
-            System.out.println(b.toString());
+        AllBankClients allBankClients = new AllBankClients(new ArrayList<Client>());
+        allBankClients.addClient(firstClient);
+        allBankClients.addClient(secondClient);
+        allBankClients.addClient(thirdClient);
+
+        System.out.println("Enter your id");
+        int id = Input.inputInt();
+        Client client = allBankClients.searchByIdClient(id);
+        if (client == null) {
+            System.out.println("We don't have you account. We can create new account for you! Enter Y/N");
+            if (Input.inputChar() == 'Y') {
+                System.out.println("Enter your name");
+                allBankClients.addNewClient(Input.inputStr());
+            }
+        } else {
+            System.out.println("Hello " + client.getName() + ". You have :");
+            client.sortByAccountAmount();
+            System.out.println(client.getBillsClient().toString());
+            System.out.println("Enter bill number to lock bill");
+            client.lockBill(Input.inputInt());
+
+            System.out.println("Your balance on all bills " + client.amountAllBills());
+            System.out.println("Your balance on positive bills " + client.amountPositiveBills());
+            System.out.println("Your balance on negative bills " + client.amountNegativeBills());
+
+            System.out.println("Enter which bank account you want to top up");
+            int numBill = Input.inputInt();
+            System.out.println("Enter how much money your want to put on bill");
+            double addMoney = Input.inputDouble();
+
+            client.topUpBill(numBill,addMoney);
+
         }
-
-
-        System.out.println("Enter your name to locked account");
-        String nameClient = Input.inputStr();
-        List<Integer> idList = new ArrayList<>(allBankBills.findAllBillsByNameCustomer(nameClient));
-        System.out.println("You have bills with Id " + idList.toString());
-        System.out.println("What id account you want lock/unlock");
-        int idLock = Input.inputInt();
-        allBankBills.findToLockUnlock(idLock);
-
-        System.out.println("sort by account amount");
-        for (Bills b : allBankBills.sortByAccountAmount()){
-            System.out.println(b.toString());
-        }
-        allBankBills.allAccountAmount(); // key is positive sum and value is negative sum
-
-        System.out.println("All sum accounts = "+allBankBills.allAccountAmount()[0]);
-        System.out.println("positiveSum accounts = "+allBankBills.allAccountAmount()[1]);
-        System.out.println("negativeSum accounts = "+allBankBills.allAccountAmount()[2]);
     }
-
-
 }

@@ -36,7 +36,7 @@ public class MainPack {
             int days = Integer.valueOf(d);
             packageForClient = allPackages.findPackagesWithNecessaryDaysOfRest(packageForClient, days);
         }
-        System.out.println("what food do you need ALL_INCLUSIVE, BREAKFAST, BREAKFAST_AND_DINNER, WITHOUT_FOOD;");
+        System.out.println("what food do you need ALL_INCLUSIVE, BREAKFAST, BREAKFAST_AND_DINNER, WITHOUT_FOOD or NO_MATTER");
         String[] food = Input.inputStr().split(" ");
         if (food[0].compareTo("NO_MATTER") != 0) {
             packageForClient = allPackages.findPackagesWithNecessaryFood(packageForClient, food);
