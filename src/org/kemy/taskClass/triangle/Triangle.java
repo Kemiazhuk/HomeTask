@@ -1,7 +1,5 @@
 package org.kemy.taskClass.triangle;
 
-import org.kemy.taskClass.customer.NotTriangleCoordinatesException;
-
 public class Triangle {
     Point firstPoint;
     Point secondPoint;
