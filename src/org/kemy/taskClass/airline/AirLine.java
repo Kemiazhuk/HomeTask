@@ -9,9 +9,9 @@ public class AirLine {
     private int flightNumber;
     private String typeAirplane;
     private int time;
-    private List<String> days;
+    private List<DaysOfTheWeek> days;
 
-    public AirLine(String destinationCity, int flightNumber, String typeAirplane, int time, List<String> days) {
+    public AirLine(String destinationCity, int flightNumber, String typeAirplane, int time, List<DaysOfTheWeek> days) {
         this.destinationCity = destinationCity;
         this.flightNumber = flightNumber;
         this.typeAirplane = typeAirplane;
@@ -59,11 +59,11 @@ public class AirLine {
         this.time = time;
     }
 
-    public List<String> getDays() {
+    public List<DaysOfTheWeek> getDays() {
         return days;
     }
 
-    public void setDays(ArrayList<String> days) {
+    public void setDays(ArrayList<DaysOfTheWeek> days) {
         this.days = days;
     }
 }
