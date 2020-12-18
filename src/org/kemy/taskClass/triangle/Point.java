@@ -13,15 +13,7 @@ public class Point {
         return pointX;
     }
 
-    public void setPointX(double pointX) {
-        this.pointX = pointX;
-    }
-
     public double getPointY() {
         return pointY;
-    }
-
-    public void setPointY(double pointY) {
-        this.pointY = pointY;
     }
 }

@@ -1,32 +1,46 @@
 package org.kemy.taskClass.triangle;
 
+import org.kemy.taskClass.customer.NotTriangleCoordinatesException;
+
 public class Triangle {
     Point firstPoint;
     Point secondPoint;
     Point thirdPoint;
 
-    public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint) {
-        this.firstPoint = firstPoint;
-        this.secondPoint = secondPoint;
-        this.thirdPoint = thirdPoint;
+    public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint) throws Exception {
+        if (existenceTriangle(firstPoint, secondPoint, thirdPoint)) {
+            this.firstPoint = firstPoint;
+            this.secondPoint = secondPoint;
+            this.thirdPoint = thirdPoint;
+        } else {
+            throw new NotTriangleCoordinatesException();
+        }
     }
 
-    public double distance(double x1, double y1, double x2, double y2) {
-        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    public double distance(Point first, Point second) {
+        return Math.sqrt((first.getPointX() - second.getPointX()) * ((first.getPointX() - second.getPointX())
+                + (first.getPointY() - second.getPointY()) * (first.getPointY() - second.getPointY())));
+    }
+
+
+    public boolean existenceTriangle(Point firstPoint, Point secondPoint, Point thirdPoint) {
+        if ((distance(firstPoint, secondPoint) + distance(firstPoint, thirdPoint) > distance(thirdPoint, secondPoint)) &&
+                (distance(firstPoint, secondPoint) + distance(thirdPoint, secondPoint) > distance(firstPoint, thirdPoint)) &&
+                (distance(thirdPoint, secondPoint) + distance(firstPoint, thirdPoint)) > (distance(firstPoint, secondPoint))) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public double calculatePerimeter() {
-
-        return distance(firstPoint.getPointX(), firstPoint.getPointY(), secondPoint.getPointX(), secondPoint.getPointY()) +
-                distance(firstPoint.getPointX(), firstPoint.getPointY(), thirdPoint.getPointX(), thirdPoint.getPointY()) +
-                distance(secondPoint.getPointX(), secondPoint.getPointY(), thirdPoint.getPointX(), thirdPoint.getPointY());
+        return distance(firstPoint, secondPoint) + distance(firstPoint, thirdPoint) + distance(secondPoint, thirdPoint);
     }
 
     public double calculateSquare() {
         double halfPer = calculatePerimeter() / 2;
-        return Math.sqrt(halfPer * (halfPer - distance(firstPoint.getPointX(), firstPoint.getPointY(), secondPoint.getPointX(), secondPoint.getPointY())) *
-                (halfPer - distance(firstPoint.getPointX(), firstPoint.getPointY(), thirdPoint.getPointX(), thirdPoint.getPointY())) *
-                (halfPer - distance(secondPoint.getPointX(), secondPoint.getPointY(), thirdPoint.getPointX(), thirdPoint.getPointY())));
+        return Math.sqrt(halfPer * (halfPer - distance(firstPoint, secondPoint)) *
+                (halfPer - distance(firstPoint, thirdPoint)) * (halfPer - distance(secondPoint, thirdPoint)));
     }
 
     public Point findPointCrossingMedians() {
