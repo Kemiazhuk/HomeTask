@@ -19,7 +19,4 @@ public class MainCustomer {
         agr.findCustomersByCreditCard(firstRange, secondRange);
         System.out.println(agr.sortByName().toString());
     }
-
-
-
 }

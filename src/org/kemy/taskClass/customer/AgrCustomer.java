@@ -26,17 +26,19 @@ public class AgrCustomer {
         }
     }
 
-    public ArrayList <Customer> sortByName() {
+    public ArrayList<Customer> sortByName() {
         Collections.sort(customer, new Comparator<Customer>() {
             @Override
             public int compare(Customer o1, Customer o2) {
                 if (o1.getFullName().compareTo(o2.getFullName()) > 0) {
                     return 1;
-                } else {
+                } else if (o1.getFullName().compareTo(o2.getFullName()) < 0) {
                     return -1;
+                } else {
+                    return 0;
                 }
             }
         });
-    return customer;
+        return customer;
     }
 }

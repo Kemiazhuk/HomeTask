@@ -1,15 +1,15 @@
 package org.kemy.taskClass.customer;
 
 public class Customer {
-     private long id;
-     private String firstName;
-     private String lastName;
-     private String patronymic;
-     private String address;
-     private String creditCard;
-     private long bankAccount;
+    private long id;
+    private String firstName;
+    private String lastName;
+    private String patronymic;
+    private String address;
+    private String creditCard;
+    private int bankAccount;
 
-    public Customer(long id, String lastName, String firstName, String patronymic, String address, String creditCard, long bankAccount) {
+    public Customer(long id, String lastName, String firstName, String patronymic, String address, String creditCard, int bankAccount) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,10 +21,10 @@ public class Customer {
 
     @Override
     public String toString() {
-        return firstName +" " + lastName +" "+  patronymic;
+        return firstName + " " + lastName + " " + patronymic;
     }
 
-    public  String getFullName(){
+    public String getFullName() {
         return firstName + " " + lastName + " " + patronymic;
     }
 
@@ -76,11 +76,11 @@ public class Customer {
         this.creditCard = creditCard;
     }
 
-    public long getBankAccount() {
+    public int getBankAccount() {
         return bankAccount;
     }
 
-    public void setBankAccount(long bankAccount) {
+    public void setBankAccount(int bankAccount) {
         this.bankAccount = bankAccount;
     }
 }
