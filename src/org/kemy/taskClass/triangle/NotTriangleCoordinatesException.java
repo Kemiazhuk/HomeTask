@@ -1,5 +1,4 @@
 package org.kemy.taskClass.triangle;
 
-public class NotTriangleCoordinatesException extends Exception
-{
+public class NotTriangleCoordinatesException extends Exception {
 }
