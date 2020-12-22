@@ -12,7 +12,7 @@ public class Test1 {
         System.out.println(firstNum + " " + secondNum + " ");
     }
 
-    public void changeNum(int first, int second) {
+    private void changeNum(int first, int second) {
         firstNum = first;
         secondNum = second;
     }
