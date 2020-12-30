@@ -3,16 +3,15 @@ package org.kemy.taskClass.book;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class CreateBook {
+public class AllMethodsForBooks {
     private ArrayList<Book> book;
 
-    public void createNewBook() {
-        book = new ArrayList<Book>();
-        book.add(new Book(1, "Azbuka", Arrays.asList("Petrov", "Petrov2"), "PetrovHouse", 1999, 50, 3.99, "hardcover"));
-        book.add(new Book(2, "Recipe", Arrays.asList("Ivanov", "Ivanov2"), "IvanovHouse", 2000, 150, 19.99, "paperback"));
-        book.add(new Book(3, "Stores", Arrays.asList("Petrov"), "PetrovHouse", 2010, 123, 4.99, "hardcover"));
-        book.add(new Book(4, "Sport", Arrays.asList("Petrov"), "PetrovHouse", 2009, 344, 12.99, "paperback"));
-        book.add(new Book(5, "War", Arrays.asList("Ivanov"), "IvanovHouse", 2003, 324, 55.99, "hardcover"));
+    public AllMethodsForBooks(ArrayList<Book> book) {
+        this.book = book;
+    }
+
+    public void addNewBook(Book newBook) {
+        book.add(newBook);
     }
 
     public void searchByAuthor(String author) {

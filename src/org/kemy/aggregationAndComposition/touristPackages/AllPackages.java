@@ -16,15 +16,11 @@ public class AllPackages {
         this.allPackages = allPackages;
     }
 
-    public ArrayList<Package> searchTouristPackages(List<String> rest, List<String> transport, List<String> day, List<String> food) {
+    public ArrayList<Package> searchTouristPackages(ArrayList<TypeOfRest> rest, ArrayList<Transports> transport, int min, int max, ArrayList<Food> food) {
         ArrayList<Package> packagesForTourist = new ArrayList<>();
         for (Package pack : allPackages) {
-            TypeOfRest packTypeOfRest = pack.getTypeOfRest();
-            Transports packTransport = pack.getTransport();
-            Food packFood = pack.getFood();
-            int packDays = pack.getDays();
-            if (rest.contains(String.valueOf(packTypeOfRest))&&(transport.contains(String.valueOf(packTransport)))&&
-                    (day.contains(String.valueOf(packDays)))&&(food.contains(String.valueOf(packFood)))) {
+            if (rest.contains(pack.getTypeOfRest()) && (transport.contains(pack.getTransport())) &&
+                    (pack.getDays() >= min) && (pack.getDays() <= max) && (food.contains(pack.getFood()))) {
                 packagesForTourist.add(pack);
             }
 

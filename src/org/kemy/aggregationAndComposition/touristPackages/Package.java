@@ -1,18 +1,20 @@
 package org.kemy.aggregationAndComposition.touristPackages;
 
+import java.math.BigDecimal;
+
 public class Package {
     private TypeOfRest typeOfRest;
     private Transports transport;
     private Food food;
     private int days;
-    private int price;
+    private BigDecimal price;
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
 
-    public Package(TypeOfRest typeOfRest, Transports transport, Food food, int days, int price) {
+    public Package(TypeOfRest typeOfRest, Transports transport, Food food, int days, BigDecimal price) {
         this.typeOfRest = typeOfRest;
         this.transport = transport;
         this.food = food;

@@ -1,19 +1,18 @@
 package org.kemy.taskClass.book;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Book {
-    private int id;
     private String name;
     private List<String> authors;
     private String publishingHouse;
     private int year;
     private int pages;
-    private double price;
+    private BigDecimal price;
     private String binding;
 
-    public Book(int id, String name, List<String> authors, String publishingHouse, int year, int pages, double price, String binding) {
-        this.id = id;
+    public Book(String name, List<String> authors, String publishingHouse, int year, int pages, BigDecimal price, String binding) {
         this.name = name;
         this.authors = authors;
         this.publishingHouse = publishingHouse;
@@ -21,14 +20,6 @@ public class Book {
         this.pages = pages;
         this.price = price;
         this.binding = binding;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -71,11 +62,11 @@ public class Book {
         this.pages = pages;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

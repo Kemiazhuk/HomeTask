@@ -1,16 +1,16 @@
 package org.kemy.taskClass.customer;
 
+import java.util.UUID;
+
 public class Customer {
-    private long id;
     private String firstName;
     private String lastName;
     private String patronymic;
     private String address;
     private String creditCard;
-    private int bankAccount;
+    private UUID bankAccount;
 
-    public Customer(long id, String lastName, String firstName, String patronymic, String address, String creditCard, int bankAccount) {
-        this.id = id;
+    public Customer( String lastName, String firstName, String patronymic, String address, String creditCard, UUID bankAccount) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;
@@ -26,14 +26,6 @@ public class Customer {
 
     public String getFullName() {
         return firstName + " " + lastName + " " + patronymic;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -76,11 +68,11 @@ public class Customer {
         this.creditCard = creditCard;
     }
 
-    public int getBankAccount() {
+    public UUID getBankAccount() {
         return bankAccount;
     }
 
-    public void setBankAccount(int bankAccount) {
+    public void setBankAccount(UUID bankAccount) {
         this.bankAccount = bankAccount;
     }
 }

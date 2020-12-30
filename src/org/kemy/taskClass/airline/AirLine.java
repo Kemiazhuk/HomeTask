@@ -6,12 +6,12 @@ import java.util.List;
 
 public class AirLine {
     private String destinationCity;
-    private int flightNumber;
+    private String flightNumber;
     private String typeAirplane;
     private int time;
     private List<DaysOfTheWeek> days;
 
-    public AirLine(String destinationCity, int flightNumber, String typeAirplane, int time, List<DaysOfTheWeek> days) {
+    public AirLine(String destinationCity, String flightNumber, String typeAirplane, int time, List<DaysOfTheWeek> days) {
         this.destinationCity = destinationCity;
         this.flightNumber = flightNumber;
         this.typeAirplane = typeAirplane;
@@ -35,11 +35,11 @@ public class AirLine {
         this.destinationCity = destinationCity;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
-    public void setFlightNumber(int flightNumber) {
+    public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 

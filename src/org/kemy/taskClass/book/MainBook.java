@@ -2,6 +2,7 @@ package org.kemy.taskClass.book;
 
 import org.kemy.Input;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,8 +11,14 @@ public class MainBook {
 
         System.out.println("What author you need?");
         String author = Input.inputStr();
-        CreateBook newBook = new CreateBook();
-        newBook.createNewBook();
+        ArrayList<Book> book = new ArrayList<>();
+        book.add(new Book("Azbuka", Arrays.asList("Petrov", "Petrov2"), "PetrovHouse", 1999, 50, BigDecimal.valueOf(3.99), "hardcover"));
+        book.add(new Book("Recipe", Arrays.asList("Ivanov", "Ivanov2"), "IvanovHouse", 2000, 150, BigDecimal.valueOf(19.99), "paperback"));
+        book.add(new Book("Stores", Arrays.asList("Petrov"), "PetrovHouse", 2010, 123, BigDecimal.valueOf(4.99), "hardcover"));
+        book.add(new Book("Sport", Arrays.asList("Petrov"), "PetrovHouse", 2009, 344, BigDecimal.valueOf(12.99), "paperback"));
+        book.add(new Book("War", Arrays.asList("Ivanov"), "IvanovHouse", 2003, 324, BigDecimal.valueOf(55.99), "hardcover"));
+
+        AllMethodsForBooks newBook = new AllMethodsForBooks(book);
 
         newBook.searchByAuthor(author);
         System.out.println("What publishing house you need?");
