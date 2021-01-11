@@ -8,6 +8,7 @@ public class Main {
 
         Bouquet bouquet = new Bouquet(new ArrayList<>(), BigDecimal.valueOf(0));
         Plant rose = new Plant.Builder()
+                .create()
                 .withName("Rose")
                 .withPrice(BigDecimal.valueOf(7.5))
                 .withQuantity(13).withFreshness(2)

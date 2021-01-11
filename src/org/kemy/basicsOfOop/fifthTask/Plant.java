@@ -12,14 +12,20 @@ public class Plant extends Product {
     }
 
     public static class Builder {
-        private Plant plant;
+        private Plant plant = new Plant();
+        private String name;
+        private BigDecimal price;
+        private int quantity;
+        private double lengthStalk;
+        private int freshness;
 
-        public Product build() {
-            return new Plant();
+        public Plant build() {
+//            plant = new Plant();
+            return plant;
         }
 
-        public Builder() {
-
+        public static Builder create() {
+            return new Builder();
         }
 
         public Builder withName(String name) {
