@@ -7,12 +7,14 @@ public class Plant extends Product {
     private double lengthStalk;
     private int freshness;
 
-    public Plant() {
-        super();
+    public Plant(String name, BigDecimal price, int quantity, double lengthStalk, int freshness) {
+        super(name, price, quantity);
+        this.lengthStalk = lengthStalk;
+        this.freshness = freshness;
     }
 
     public static class Builder {
-        private Plant plant = new Plant();
+        private Plant plant;
         private String name;
         private BigDecimal price;
         private int quantity;
@@ -20,7 +22,7 @@ public class Plant extends Product {
         private int freshness;
 
         public Plant build() {
-//            plant = new Plant();
+            plant = new Plant(this.name, this.price, this.quantity, this.lengthStalk, this.freshness);
             return plant;
         }
 
@@ -29,37 +31,31 @@ public class Plant extends Product {
         }
 
         public Builder withName(String name) {
-            plant.name = name;
+            this.name = name;
             return this;
         }
 
         public Builder withPrice(BigDecimal price) {
-            plant.price = price;
+            this.price = price;
             return this;
         }
 
         public Builder withQuantity(int quantity) {
-            plant.quantity = quantity;
+            this.quantity = quantity;
             return this;
         }
 
         public Builder withLengthStalk(double lengthStalk) {
-            plant.lengthStalk = lengthStalk;
+            this.lengthStalk = lengthStalk;
             return this;
         }
 
         public Builder withFreshness(int freshness) {
-            plant.freshness = freshness;
+            this.freshness = freshness;
             return this;
         }
 
     }
-//    public Plant(String name, double lengthStalk, int freshness, BigDecimal price, int quantity) {
-//
-//
-//        this.lengthStalk = lengthStalk;
-//        this.freshness = freshness;
-//    }
 
     public String getName() {
         return name;
