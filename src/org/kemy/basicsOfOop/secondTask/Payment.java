@@ -2,12 +2,12 @@ package org.kemy.basicsOfOop.secondTask;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Payment {
-
     private ArrayList<Product> products;
 
-    static class Product {
+    public class Product {
         private String name;
         private BigDecimal cost;
 
@@ -17,9 +17,11 @@ public class Payment {
         }
     }
 
-
     public Payment(ArrayList<Product> products) {
         this.products = products;
+    }
+
+    public Payment() {
     }
 
     public BigDecimal payForProducts() {
