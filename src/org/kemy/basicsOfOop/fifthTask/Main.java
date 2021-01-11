@@ -42,6 +42,7 @@ public class Main {
         accessoriesForBouquet = (Accessories) tape.clone();
         bouquet.addAccessories(accessoriesForBouquet, 1);
         tape.setQuantity(tape.getQuantity() - 1);
+
         System.out.println(bouquet.toString());
     }
 

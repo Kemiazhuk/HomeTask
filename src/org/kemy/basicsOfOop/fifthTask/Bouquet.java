@@ -4,19 +4,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Bouquet {
-//    private ArrayList<Plant> plants;
-//    private ArrayList<Accessories> accessories;
     private ArrayList<Product> allProducts;
     private BigDecimal priceBouquet;
 
-//    public Bouquet(ArrayList<Plant> plants, ArrayList<Accessories> accessories, BigDecimal priceBouquet) {
-//        this.plants = plants;
-//        this.accessories = accessories;
-//        this.priceBouquet = priceBouquet;
-//    }
-
-//    public Bouquet() {
-//    }
 
     public Bouquet(ArrayList<Product> allProducts, BigDecimal priceBouquet) {
         this.allProducts = allProducts;
