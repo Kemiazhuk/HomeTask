@@ -24,7 +24,7 @@ public class Bouquet {
     public void addAccessories (Accessories accessory,int quantity){
         this.allProducts.add(accessory);
         accessory.setQuantity(quantity);
-        priceBouquet = priceBouquet.add(accessory.getPrice());
+        priceBouquet = priceBouquet.add(accessory.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 
     public BigDecimal getPriceBouquet() {
