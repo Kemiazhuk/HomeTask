@@ -7,11 +7,19 @@ public class Plant extends Product {
     private double lengthStalk;
     private int freshness;
 
+    public Plant() {
+        super();
+    }
+
     public static class Builder {
         private Plant plant;
 
+        public Product build() {
+            return new Plant();
+        }
+
         public Builder() {
-            plant = new Plant();
+
         }
 
         public Builder withName(String name) {
@@ -37,10 +45,6 @@ public class Plant extends Product {
         public Builder withFreshness(int freshness) {
             plant.freshness = freshness;
             return this;
-        }
-
-        public Product build() {
-            return product;
         }
 
     }
