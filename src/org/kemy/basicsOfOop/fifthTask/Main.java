@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         Bouquet bouquet = new Bouquet(new ArrayList<>(), BigDecimal.valueOf(0));
         Plant rose = new Plant.Builder()
@@ -31,14 +31,18 @@ public class Main {
                 .withQuantity(2)
                 .withColor("red")
                 .build();
-        bouquet.addPlant(rose, 3);
-        System.out.println(rose.getQuantity());
+        Plant roseForBouquet = (Plant) rose.clone();
+        bouquet.addPlant(roseForBouquet, 3);
         rose.setQuantity(rose.getQuantity() - 3);
-        System.out.println(rose.getQuantity());
-        bouquet.addAccessories(paper, 1);
+
+        Accessories accessoriesForBouquet = (Accessories) paper.clone();
+        bouquet.addAccessories(accessoriesForBouquet, 1);
         paper.setQuantity(paper.getQuantity() - 1);
-        bouquet.addAccessories(tape, 1);
+
+        accessoriesForBouquet = (Accessories) tape.clone();
+        bouquet.addAccessories(accessoriesForBouquet, 1);
         tape.setQuantity(tape.getQuantity() - 1);
         System.out.println(bouquet.toString());
     }
+
 }

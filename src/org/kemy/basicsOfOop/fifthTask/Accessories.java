@@ -2,8 +2,13 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Accessories extends Product {
+public class Accessories extends Product implements Cloneable{
     private String color;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     public Accessories(String name, BigDecimal price, int quantity, String color) {
         super(name, price, quantity);

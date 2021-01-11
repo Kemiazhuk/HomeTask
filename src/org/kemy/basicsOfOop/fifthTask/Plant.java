@@ -2,7 +2,11 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Plant extends Product {
+public class Plant extends Product implements Cloneable{
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     private double lengthStalk;
     private int freshness;

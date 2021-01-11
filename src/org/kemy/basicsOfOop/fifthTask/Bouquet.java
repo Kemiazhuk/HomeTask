@@ -24,10 +24,12 @@ public class Bouquet {
     }
 
     public void addPlant(Plant plant, int quantity){
-        plant.setQuantity(plant.getQuantity()-quantity);
+        plant.setQuantity(3);
         this.allProducts.add(plant);
         priceBouquet = priceBouquet.add(plant.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
+
+
 
     public void addAccessories (Accessories accessory,int quantity){
         this.allProducts.add(accessory);
