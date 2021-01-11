@@ -13,8 +13,11 @@ public class Main {
         Accessories paper = new Accessories("paper", BigDecimal.valueOf(3.03),1,"red");
         Accessories tape = new Accessories("tape", BigDecimal.valueOf(2.02),2,"red");
         bouquet.addPlant(rose,3);
+        rose.setQuantity(rose.getQuantity()-3);
         bouquet.addAccessories(paper,1);
+        paper.setQuantity(paper.getQuantity()-1);
         bouquet.addAccessories(tape,1);
+        tape.setQuantity(tape.getQuantity()-1);
         System.out.println(bouquet.toString());
     }
 }
