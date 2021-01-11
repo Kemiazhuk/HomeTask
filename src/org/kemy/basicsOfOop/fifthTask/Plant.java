@@ -3,15 +3,53 @@ package org.kemy.basicsOfOop.fifthTask;
 import java.math.BigDecimal;
 
 public class Plant extends Product {
+
     private double lengthStalk;
     private int freshness;
-    private int quantity;
 
-    public Plant(String name, double lengthStalk, int freshness, BigDecimal price, int quantity) {
-        super(name, price, quantity);
-        this.lengthStalk = lengthStalk;
-        this.freshness = freshness;
+    public static class Builder {
+        private Plant plant;
+
+        public Builder() {
+            plant = new Plant();
+        }
+
+        public Builder withName(String name) {
+            plant.name = name;
+            return this;
+        }
+
+        public Builder withPrice(BigDecimal price) {
+            plant.price = price;
+            return this;
+        }
+
+        public Builder withQuantity(int quantity) {
+            plant.quantity = quantity;
+            return this;
+        }
+
+        public Builder withLengthStalk(double lengthStalk) {
+            plant.lengthStalk = lengthStalk;
+            return this;
+        }
+
+        public Builder withFreshness(int freshness) {
+            plant.freshness = freshness;
+            return this;
+        }
+
+        public Product build() {
+            return product;
+        }
+
     }
+//    public Plant(String name, double lengthStalk, int freshness, BigDecimal price, int quantity) {
+//
+//
+//        this.lengthStalk = lengthStalk;
+//        this.freshness = freshness;
+//    }
 
     public String getName() {
         return name;

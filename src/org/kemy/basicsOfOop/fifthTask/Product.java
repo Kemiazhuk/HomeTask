@@ -7,6 +7,7 @@ public class Product {
     public BigDecimal price;
     public int quantity;
 
+
     public Product(String name, BigDecimal price, int quantity) {
         this.name = name;
         this.price = price;

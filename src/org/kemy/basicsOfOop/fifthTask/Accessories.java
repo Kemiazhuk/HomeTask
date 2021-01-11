@@ -6,7 +6,7 @@ public class Accessories extends Product {
     private String color;
 
     public Accessories(String name, BigDecimal price, int quantity, String color) {
-        super(name, price, quantity);
+        Product newProduct = new Product.Builder() .withName(name).withPrice(price).withQuantity(quantity).build();
         this.color = color;
     }
 
