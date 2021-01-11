@@ -2,19 +2,15 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Plant {
-    private String name;
+public class Plant extends Product {
     private double lengthStalk;
     private int freshness;
-    private BigDecimal price;
     private int quantity;
 
     public Plant(String name, double lengthStalk, int freshness, BigDecimal price, int quantity) {
-        this.name = name;
+        super(name, price, quantity);
         this.lengthStalk = lengthStalk;
         this.freshness = freshness;
-        this.price = price;
-        this.quantity = quantity;
     }
 
     public String getName() {
@@ -59,7 +55,6 @@ public class Plant {
 
     @Override
     public String toString() {
-        return  name +"  " + lengthStalk +
-                " length quantity ="+quantity ;
+        return name + " " + quantity;
     }
 }

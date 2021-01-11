@@ -2,13 +2,12 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Accessories {
-    private String name;
-    private BigDecimal price;
+public class Accessories extends Product {
+    private String color;
 
-    public Accessories(String name, BigDecimal price) {
-        this.name = name;
-        this.price = price;
+    public Accessories(String name, BigDecimal price, int quantity, String color) {
+        super(name, price, quantity);
+        this.color = color;
     }
 
     public String getName() {
@@ -21,6 +20,6 @@ public class Accessories {
 
     @Override
     public String toString() {
-        return name;
+        return quantity + " " +  color  + " " + name ;
     }
 }
