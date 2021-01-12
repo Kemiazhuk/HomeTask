@@ -1,0 +1,13 @@
+Crown Gold 222
+Bracelet Silver 12
+Gloves Silk 44
+Ring Gold 100
+Earrings Gold 150
+Invisibility_cloak Wool 999
+Sword Steal 50
+Axe Mithril 400
+Old_coins unknown 22
+Brilliant Brilliant 312
+Statue Gold 434
+Elf_bow wood 211
+Magic_wand wood 177

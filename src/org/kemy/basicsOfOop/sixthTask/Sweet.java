@@ -5,9 +5,15 @@ import java.math.BigDecimal;
 public class Sweet extends Product implements Cloneable {
     private String brandOfSweet;
 
+
     @Override
     protected Object clone() throws CloneNotSupportedException {
+
         return super.clone();
+    }
+
+    public String getBrandOfSweet() {
+        return brandOfSweet;
     }
 
     public Sweet(String name, BigDecimal price, int quantity, String brandOfSweet) {
