@@ -16,15 +16,13 @@ public class Sweet extends Product implements Cloneable {
     }
 
     public static class Builder {
-        private Sweet sweet;
         private String name;
         private BigDecimal price;
         private int quantity;
         private String brandOfSweet;
 
         public Sweet build() {
-            sweet = new Sweet (name, price, quantity, brandOfSweet);
-            return sweet;
+            return new Sweet(name, price, quantity, brandOfSweet);
         }
 
         public static Builder create() {

@@ -2,7 +2,7 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Plant extends Product implements Cloneable{
+public class Plant extends Product implements Cloneable {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
@@ -18,7 +18,6 @@ public class Plant extends Product implements Cloneable{
     }
 
     public static class Builder {
-        private Plant plant;
         private String name;
         private BigDecimal price;
         private int quantity;
@@ -26,8 +25,7 @@ public class Plant extends Product implements Cloneable{
         private int freshness;
 
         public Plant build() {
-            plant = new Plant(this.name, this.price, this.quantity, this.lengthStalk, this.freshness);
-            return plant;
+            return new Plant(this.name, this.price, this.quantity, this.lengthStalk, this.freshness);
         }
 
         public static Builder create() {

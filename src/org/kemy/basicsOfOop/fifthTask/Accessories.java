@@ -2,7 +2,7 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Accessories extends Product implements Cloneable{
+public class Accessories extends Product implements Cloneable {
     private String color;
 
     @Override
@@ -16,15 +16,13 @@ public class Accessories extends Product implements Cloneable{
     }
 
     public static class Builder {
-        private Accessories accessories;
         private String name;
         private BigDecimal price;
         private int quantity;
         private String color;
 
         public Accessories build() {
-            accessories = new Accessories(this.name, this.price, this.quantity, this.color);
-            return accessories;
+            return new Accessories(this.name, this.price, this.quantity, this.color);
         }
 
         public static Builder create() {

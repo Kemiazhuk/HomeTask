@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
 
         Bouquet bouquet = new Bouquet(new ArrayList<>(), BigDecimal.valueOf(0));
-        Plant rose = new Plant.Builder()
+        Plant rose = Plant.Builder
                 .create()
                 .withName("Rose")
                 .withPrice(BigDecimal.valueOf(7.5))
@@ -15,16 +15,30 @@ public class Main {
                 .withFreshness(2)
                 .withLengthStalk(70)
                 .build();
-//        Plant peony = new Plant("Peony", 50, 4, BigDecimal.valueOf(4.55), 3);
-//        Plant tulip = new Plant("Tulip", 70, 1, BigDecimal.valueOf(3.1), 9);
-        Accessories paper = new Accessories.Builder()
+        Plant peony = Plant.Builder
+                .create()
+                .withName("Peony")
+                .withPrice(BigDecimal.valueOf(4.55))
+                .withQuantity(50)
+                .withFreshness(3)
+                .withLengthStalk(50)
+                .build();
+        Plant tulip = Plant.Builder
+                .create()
+                .withName("Tulip")
+                .withPrice(BigDecimal.valueOf(3.1))
+                .withQuantity(70)
+                .withFreshness(1)
+                .withLengthStalk(45)
+                .build();
+        Accessories paper = Accessories.Builder
                 .create()
                 .withName("paper")
                 .withPrice(BigDecimal.valueOf(3.03))
                 .withQuantity(3)
                 .withColor("red")
                 .build();
-        Accessories tape = new Accessories.Builder()
+        Accessories tape = Accessories.Builder
                 .create()
                 .withName("tape")
                 .withPrice(BigDecimal.valueOf(2.02))
