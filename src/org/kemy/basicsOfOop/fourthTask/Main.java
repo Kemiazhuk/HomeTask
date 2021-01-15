@@ -3,12 +3,10 @@ package org.kemy.basicsOfOop.fourthTask;
 import org.kemy.Input;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -31,7 +29,7 @@ public class Main {
             System.out.println(t.toString());
         }
         System.out.println("More expensive treasure is:");
-        System.out.println(caveTreasure.moreExpensiveTreasure().toString());
+        System.out.println(caveTreasure.mostExpensiveTreasure().toString());
 
         System.out.println("enter how much many you have for a treasure");
 

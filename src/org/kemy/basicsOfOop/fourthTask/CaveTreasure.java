@@ -9,15 +9,15 @@ public class CaveTreasure {
     private ArrayList<Treasure> allTreasure;
     private BigDecimal sum = new BigDecimal("0");
     private BigDecimal worth = new BigDecimal("0");
-    ArrayList<ArrayList<Treasure>> worthTreasure = new ArrayList<ArrayList<Treasure>>();
-    ArrayList<Treasure> tempTreasure = new ArrayList<>();
-    boolean[] existTreasure;
+    private ArrayList<ArrayList<Treasure>> worthTreasure = new ArrayList<ArrayList<Treasure>>();
+    private ArrayList<Treasure> tempTreasure = new ArrayList<>();
+    private boolean[] existTreasure;
 
     public CaveTreasure(ArrayList<Treasure> allTreasure) {
         this.allTreasure = allTreasure;
     }
 
-    public Treasure moreExpensiveTreasure() {
+    public Treasure mostExpensiveTreasure() {
         BigDecimal expensive = new BigDecimal("-1");
         Treasure treasure = null;
         for (Treasure t : allTreasure) {
