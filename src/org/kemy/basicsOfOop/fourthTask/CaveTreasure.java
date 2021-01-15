@@ -33,7 +33,6 @@ public class CaveTreasure {
         worth = searchSum;
         existTreasure = new boolean[allTreasure.size()];
         findSetTreasure(0);
-        System.out.println(worthTreasure.size());
         return worthTreasure;
     }
 

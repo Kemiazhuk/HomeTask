@@ -34,9 +34,9 @@ public class Main {
         System.out.println("enter how much many you have for a treasure");
 
         ArrayList<ArrayList<Treasure>> setOfTreasure = caveTreasure.worthOfTreasures(Input.inputBigDec());
-        for (ArrayList<Treasure> t : setOfTreasure) {
-            System.out.println(t.toString());
-        }
+//        for (ArrayList<Treasure> t : setOfTreasure) {
+//            System.out.println(t.toString());
+//        }
         Random rnd = new Random(System.currentTimeMillis());
         System.out.println(setOfTreasure.get(rnd.nextInt(setOfTreasure.size())));
     }
