@@ -1,10 +1,17 @@
 package org.kemy.basicsOfOop.fourthTask;
 
+import javax.swing.table.TableRowSorter;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.*;
 
 public class CaveTreasure {
     private ArrayList<Treasure> allTreasure;
+    private BigDecimal sum = new BigDecimal("0");
+    private BigDecimal worth = new BigDecimal("0");
+    ArrayList<ArrayList<Treasure>> worthTreasure = new ArrayList<ArrayList<Treasure>>();
+    ArrayList<Treasure> tempTreasure = new ArrayList<>();
+    boolean[] existTreasure;
 
     public CaveTreasure(ArrayList<Treasure> allTreasure) {
         this.allTreasure = allTreasure;
@@ -21,6 +28,39 @@ public class CaveTreasure {
         }
         return treasure;
     }
+
+    public ArrayList<ArrayList<Treasure>> worthOfTreasures(BigDecimal searchSum) {
+        worth = searchSum;
+        existTreasure = new boolean[allTreasure.size()];
+        findSetTreasure(0);
+        System.out.println(worthTreasure.size());
+        return worthTreasure;
+    }
+
+    public void findSetTreasure(int start) {
+        if (sum.compareTo(worth) > 0) {
+            return;
+        }
+
+        if (sum.compareTo(worth) == 0) {
+            worthTreasure.add((ArrayList<Treasure>) tempTreasure.clone());
+        }
+
+        for (int i = start; i < allTreasure.size(); i++) {
+            if (!existTreasure[i]) {
+                existTreasure[i] = true;
+                tempTreasure.add(allTreasure.get(i));
+                sum = sum.add(allTreasure.get(i).getCost());
+
+                findSetTreasure(i);
+                existTreasure[i] = false;
+                tempTreasure.remove(allTreasure.get(i));
+                sum = sum.subtract(allTreasure.get(i).getCost());
+            }
+
+        }
+    }
+
 
     @Override
     public String toString() {

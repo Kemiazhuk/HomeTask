@@ -1,10 +1,10 @@
-Crown Gold 222
-Bracelet Silver 12
-Gloves Silk 44
-Ring Gold 100
-Earrings Gold 150
-Invisibility_cloak Wool 999
-Sword Steal 50
+Crown Gold 10
+Bracelet Silver 15
+Gloves Silk 25
+Ring Gold 30
+Earrings Gold 45
+Invisibility_cloak Wool 90
+Sword Steal 60
 Axe Mithril 400
 Old_coins unknown 22
 Brilliant Brilliant 312
