@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 
 public class Treasure {
     private String name;
-    private String materialType;
+    private MaterialTreasure materialType;
     private BigDecimal cost;
 
-    public Treasure(String name, String materialType, BigDecimal cost) {
+    public Treasure(String name, MaterialTreasure materialType, BigDecimal cost) {
         this.name = name;
         this.materialType = materialType;
         this.cost = cost;
@@ -18,8 +18,8 @@ public class Treasure {
     @Override
     public String toString() {
         return name +
-                " materialType=" + materialType  +
-                " cost=" + cost  ;
+                " materialType=" + materialType +
+                " cost=" + cost;
     }
 
     public String getName() {
@@ -30,11 +30,11 @@ public class Treasure {
         this.name = name;
     }
 
-    public String getMaterialType() {
+    public MaterialTreasure getMaterialType() {
         return materialType;
     }
 
-    public void setMaterialType(String materialType) {
+    public void setMaterialType(MaterialTreasure materialType) {
         this.materialType = materialType;
     }
 

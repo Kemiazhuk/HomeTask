@@ -4,23 +4,29 @@ public class Day {
     private MonthOfTheYear month;
     private DaysOfTheWeek daysOfTheWeek;
     private int numberInMonth;
-    private boolean holiday;
-    private String inf;
+    private boolean typeOfDay;
+    private String note;
 
-    public Day(Integer month, Integer daysOfTheWeek, int numberInMonth, boolean holiday) {
+    public boolean isTypeOfDay() {
+        return typeOfDay;
+    }
+
+    public void setTypeOfDay(boolean typeOfDay) {
+        this.typeOfDay = typeOfDay;
+    }
+
+    public Day(Integer month, Integer daysOfTheWeek, int numberInMonth) {
         this.month = MonthOfTheYear.getNameMonth(month);
         this.daysOfTheWeek = DaysOfTheWeek.getNameDay(daysOfTheWeek);
         this.numberInMonth = numberInMonth;
-        this.holiday = holiday;
-
     }
 
-    public String getInf() {
-        return inf;
+    public String getNote() {
+        return note;
     }
 
-    public void setInf(String inf) {
-        this.inf = inf;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public MonthOfTheYear getMonth() {
@@ -35,13 +41,9 @@ public class Day {
         return numberInMonth;
     }
 
-    public boolean isHoliday() {
-        return holiday;
-    }
-
     @Override
     public String toString() {
         return daysOfTheWeek + " " + numberInMonth +
-                " " + month ;
+                " " + month + " Note " + note;
     }
 }

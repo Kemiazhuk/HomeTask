@@ -11,33 +11,46 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader buffer = new BufferedReader(new FileReader("src/org/kemy/basicsOfOop/fourthTask/Cave.txt"));
-        String str = buffer.readLine();
-        ArrayList<Treasure> allTreasure = new ArrayList<>();
-        while (str != null) {
-            String[] treasureStr = str.split(" ");
-            Treasure treasure = new Treasure(treasureStr[0], treasureStr[1], new BigDecimal(treasureStr[2]));
-            allTreasure.add(treasure);
-            str = buffer.readLine();
+
+
+        CaveTreasure caveTreasure = new CaveTreasure();
+        int i = 0;
+        while (i != 4) {
+            System.out.println("You in a cave, what do you want to do?");
+            System.out.println("1. See all treasure");
+            System.out.println("2. See most expensive treasure");
+            System.out.println("3. Choose treasures for the required amount");
+            System.out.println("4. Exit");
+            i = Input.inputInt();
+            if (i == 1) {
+                System.out.println("All treasure");
+                caveTreasure.caveShowHisTreasure();
+            }
+            if (i == 2) {
+                System.out.println("More expensive treasure is:");
+                System.out.println(caveTreasure.getMostExpensiveTreasure());
+            }
+            if (i == 3) {
+                System.out.println("Enter how much many you have for a treasure");
+                ArrayList<Treasure> treasureForClint = caveTreasure.worthOfTreasures(Input.inputBigDec());
+                if (treasureForClint.size()>0) {
+                    for (Treasure t: treasureForClint)
+                    System.out.println(t.toString());
+                } else {
+                    System.out.println("There is no treasure for this money");
+                }
+//                Random rnd = new Random(System.currentTimeMillis());
+//                System.out.println(setOfTreasure.get(rnd.nextInt(setOfTreasure.size())));
+            }
+            if ((i != 1)&&(i != 2) && (i != 3) && (i != 4)) {
+                System.out.println("Enter the required number");
+            }
         }
 
-        buffer.close();
 
-        CaveTreasure caveTreasure = new CaveTreasure(allTreasure);
-        System.out.println("All treasure");
-        for (Treasure t : allTreasure) {
-            System.out.println(t.toString());
-        }
-        System.out.println("More expensive treasure is:");
-        System.out.println(caveTreasure.mostExpensiveTreasure().toString());
-
-        System.out.println("enter how much many you have for a treasure");
-
-        ArrayList<ArrayList<Treasure>> setOfTreasure = caveTreasure.worthOfTreasures(Input.inputBigDec());
 //        for (ArrayList<Treasure> t : setOfTreasure) {
 //            System.out.println(t.toString());
 //        }
-        Random rnd = new Random(System.currentTimeMillis());
-        System.out.println(setOfTreasure.get(rnd.nextInt(setOfTreasure.size())));
+
     }
 }
