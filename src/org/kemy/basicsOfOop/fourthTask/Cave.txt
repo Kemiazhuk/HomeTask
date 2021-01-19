@@ -8,6 +8,6 @@ Sword STEAL 60
 Axe MITHRIL 400
 Old_coins UNKNOWN 22
 Brilliant BRILLIANT 312
-Statue GOLD 434
+Statue GOLD 100
 Elf_bow WOOD 211
 Magic_wand WOOD 177

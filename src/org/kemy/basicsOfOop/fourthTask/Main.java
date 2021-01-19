@@ -25,32 +25,33 @@ public class Main {
             if (i == 1) {
                 System.out.println("All treasure");
                 caveTreasure.caveShowHisTreasure();
-            }
-            if (i == 2) {
+            } else if (i == 2) {
                 System.out.println("More expensive treasure is:");
                 System.out.println(caveTreasure.getMostExpensiveTreasure());
-            }
-            if (i == 3) {
+            } else if (i == 3) {
                 System.out.println("Enter how much many you have for a treasure");
                 ArrayList<Treasure> treasureForClint = caveTreasure.worthOfTreasures(Input.inputBigDec());
-                if (treasureForClint.size()>0) {
-                    for (Treasure t: treasureForClint)
-                    System.out.println(t.toString());
+                if (treasureForClint.size() > 0) {
+                    for (Treasure t : treasureForClint) {
+                        System.out.println(t.toString());
+                    }
+                    System.out.println("If you will take this treasure enter 0, if not enter 1");
+                    int k = Input.inputInt();
+                    if (k == 0) {
+                        for (Treasure t : treasureForClint) {
+                            caveTreasure.removeTreasure(t);
+                        }
+                    }
                 } else {
                     System.out.println("There is no treasure for this money");
                 }
-//                Random rnd = new Random(System.currentTimeMillis());
-//                System.out.println(setOfTreasure.get(rnd.nextInt(setOfTreasure.size())));
-            }
-            if ((i != 1)&&(i != 2) && (i != 3) && (i != 4)) {
+            } else if ((i != 1) && (i != 2) && (i != 3) && (i != 4)) {
                 System.out.println("Enter the required number");
             }
         }
 
-
-//        for (ArrayList<Treasure> t : setOfTreasure) {
-//            System.out.println(t.toString());
-//        }
-
     }
+
 }
+
+
