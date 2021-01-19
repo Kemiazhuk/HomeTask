@@ -1,4 +1,4 @@
-package org.kemy.basicsOfOop.fistTask;
+package org.kemy.basicsOfOop.firstTask;
 
 import java.io.File;
 import java.net.URI;

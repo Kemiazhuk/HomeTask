@@ -14,7 +14,7 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Product() {
+    public Product(String sneakers, BigDecimal bigDecimal) {
     }
 
     public int getQuantity() {

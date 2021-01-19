@@ -1,36 +1,49 @@
 package org.kemy.basicsOfOop.thirdTask;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
 
 public class Calendar {
     private ArrayList<WeekendsAndHolidays> allDaysWithNotes;
+    private GregorianCalendar calendar;
+    private ArrayList<Day> allYear;
 
-    public Calendar(ArrayList<WeekendsAndHolidays> allDaysWithNotes) {
-        this.allDaysWithNotes = allDaysWithNotes;
+
+    public Calendar(int year) {
+        this.calendar = new GregorianCalendar(year, java.util.Calendar.JANUARY, 1);
+        calendar.isLeapYear(year);
+        this.allDaysWithNotes = new ArrayList<WeekendsAndHolidays>();
+        createAllDaysInYear(year);
     }
 
-    public Calendar() {
+    public void createAllDaysInYear(int year) {
+        allYear = new ArrayList<>();
+        while (calendar.get(java.util.Calendar.YEAR) == year) {
+            allYear.add(new Day(calendar.get(java.util.Calendar.MONTH),
+                    calendar.get(java.util.Calendar.DAY_OF_WEEK),
+                    calendar.get(java.util.Calendar.DAY_OF_MONTH), false));
+            calendar.add(calendar.DAY_OF_MONTH, 1);
+        }
+        System.out.println(allYear.size());
     }
+
 
     public class WeekendsAndHolidays {
-        Enum whatDay;
-        String information;
+        HashMap<Day, String> allHolidays;
 
-        public WeekendsAndHolidays(Enum whatDay, String information) {
-            this.whatDay = whatDay;
-            this.information = information;
+        public WeekendsAndHolidays() {
         }
 
-        @Override
-        public String toString() {
-            return whatDay +" "+ information;
-        }
     }
 
-    public void checkTheDayAndAdd(DaysOfTheWeek day, String inf) {
+    public void checkTheDayAndAdd (String inf) {
         //check the day on holidays
-        if ((DaysOfTheWeek.SUNDAY.equals(day)) || ((DaysOfTheWeek.SATURDAY).equals(day))) {
-            allDaysWithNotes.add(new WeekendsAndHolidays(day, inf));
+        for (Day d : allYear) {
+            if ((DaysOfTheWeek.SUNDAY.equals(d.getDaysOfTheWeek())) || ((DaysOfTheWeek.SATURDAY).equals(d.getDaysOfTheWeek()))) {
+                d.setInf(inf);
+            }
         }
     }
 
