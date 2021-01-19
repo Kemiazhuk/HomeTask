@@ -2,27 +2,26 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Bouquet {
-    private ArrayList<Product> allProducts;
+    private HashMap<Product,Integer> allProducts;
     private BigDecimal priceBouquet;
 
 
-    public Bouquet(ArrayList<Product> allProducts, BigDecimal priceBouquet) {
+    public Bouquet(HashMap<Product,Integer> allProducts, BigDecimal priceBouquet) {
         this.allProducts = allProducts;
         this.priceBouquet = priceBouquet;
     }
 
-    public void addPlant(Plant plant, int quantity) {
-        plant.setQuantity(quantity);
-        this.allProducts.add(plant);
+    public void addPlant(Product plant, int quantity) {
+        this.allProducts.put(plant,quantity);
         priceBouquet = priceBouquet.add(plant.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 
 
-    public void addAccessories(Accessories accessory, int quantity) {
-        accessory.setQuantity(quantity);
-        this.allProducts.add(accessory);
+    public void addAccessories(Product accessory, int quantity) {
+        this.allProducts.put(accessory,quantity);
         priceBouquet = priceBouquet.add(accessory.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 

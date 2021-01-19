@@ -1,61 +1,68 @@
 package org.kemy.basicsOfOop.fifthTask;
 
+import org.kemy.basicsOfOop.fifthTask.accessories.Paper;
+import org.kemy.basicsOfOop.fifthTask.accessories.Tape;
+import org.kemy.basicsOfOop.fifthTask.accessories.TypeOfPaper;
+import org.kemy.basicsOfOop.fifthTask.plants.Colors;
+import org.kemy.basicsOfOop.fifthTask.plants.Peony;
+import org.kemy.basicsOfOop.fifthTask.plants.Rose;
+import org.kemy.basicsOfOop.fifthTask.plants.Tulip;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
 
-        Bouquet bouquet = new Bouquet(new ArrayList<>(), BigDecimal.valueOf(0));
-        Plant rose = Plant.Builder
+        Bouquet bouquet = new Bouquet(new HashMap<>(), BigDecimal.valueOf(0));
+
+        Rose rose = Rose.Builder
                 .create()
                 .withName("Rose")
                 .withPrice(BigDecimal.valueOf(7.5))
-                .withQuantity(13)
                 .withFreshness(2)
                 .withLengthStalk(70)
+                .withColor(Colors.valueOf("RED"))
+                .withLengthThorns(0.2)
                 .build();
-        Plant peony = Plant.Builder
+        Peony peony = Peony.Builder
                 .create()
                 .withName("Peony")
                 .withPrice(BigDecimal.valueOf(4.55))
-                .withQuantity(50)
                 .withFreshness(3)
                 .withLengthStalk(50)
+                .withColor(Colors.valueOf("RED"))
+                .withBuds(2)
                 .build();
-        Plant tulip = Plant.Builder
+        Tulip tulip = Tulip.Builder
                 .create()
                 .withName("Tulip")
                 .withPrice(BigDecimal.valueOf(3.1))
-                .withQuantity(70)
                 .withFreshness(1)
                 .withLengthStalk(45)
+                .withColor(Colors.valueOf("YELLOW"))
+                .withFlowerLeaves(2)
                 .build();
-        Accessories paper = Accessories.Builder
+        Paper paper = Paper.Builder
                 .create()
                 .withName("paper")
                 .withPrice(BigDecimal.valueOf(3.03))
-                .withQuantity(3)
-                .withColor("red")
+                .withColor(Colors.valueOf("WHITE"))
+                .withTypeOfPaper(TypeOfPaper.valueOf("GLITTER"))
                 .build();
-        Accessories tape = Accessories.Builder
+        Tape tape = Tape.Builder
                 .create()
                 .withName("tape")
                 .withPrice(BigDecimal.valueOf(2.02))
-                .withQuantity(2)
-                .withColor("red")
+                .withColor(Colors.valueOf("RED"))
+                .withLength(11.2)
                 .build();
-        Plant roseForBouquet = (Plant) rose.clone();
-        bouquet.addPlant(roseForBouquet, 3);
-        rose.setQuantity(rose.getQuantity() - 3);
 
-        Accessories accessoriesForBouquet = (Accessories) paper.clone();
-        bouquet.addAccessories(accessoriesForBouquet, 1);
-        paper.setQuantity(paper.getQuantity() - 1);
+        bouquet.addPlant(rose, 3);
 
-        accessoriesForBouquet = (Accessories) tape.clone();
-        bouquet.addAccessories(accessoriesForBouquet, 1);
-        tape.setQuantity(tape.getQuantity() - 1);
+        bouquet.addAccessories(paper, 1);
+        bouquet.addAccessories(tape, 1);
 
         System.out.println(bouquet.toString());
     }
