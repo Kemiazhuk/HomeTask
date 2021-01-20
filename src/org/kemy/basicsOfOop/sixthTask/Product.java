@@ -5,13 +5,11 @@ import java.math.BigDecimal;
 public class Product {
     public String name;
     public BigDecimal price;
-    public int quantity;
 
 
-    public Product(String name, BigDecimal price, int quantity) {
+    public Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
     }
 
     public Product() {
@@ -33,17 +31,10 @@ public class Product {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
     @Override
     public String toString() {
-        return quantity + name;
+        return name + " ";
 
     }
 }

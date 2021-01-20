@@ -3,13 +3,11 @@ package org.kemy.basicsOfOop.fifthTask;
 import org.kemy.basicsOfOop.fifthTask.accessories.Paper;
 import org.kemy.basicsOfOop.fifthTask.accessories.Tape;
 import org.kemy.basicsOfOop.fifthTask.accessories.TypeOfPaper;
-import org.kemy.basicsOfOop.fifthTask.plants.Colors;
 import org.kemy.basicsOfOop.fifthTask.plants.Peony;
 import org.kemy.basicsOfOop.fifthTask.plants.Rose;
 import org.kemy.basicsOfOop.fifthTask.plants.Tulip;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {

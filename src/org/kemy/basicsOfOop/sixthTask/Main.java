@@ -1,56 +1,67 @@
 package org.kemy.basicsOfOop.sixthTask;
 
+import org.kemy.basicsOfOop.fourthTask.MaterialTreasure;
+import org.kemy.basicsOfOop.sixthTask.accessories.Box;
+import org.kemy.basicsOfOop.sixthTask.accessories.Paper;
+import org.kemy.basicsOfOop.sixthTask.accessories.Tape;
+import org.kemy.basicsOfOop.sixthTask.accessories.TypeOfPaper;
+import org.kemy.basicsOfOop.sixthTask.sweetStuf.Cookie;
+import org.kemy.basicsOfOop.sixthTask.sweetStuf.Lollipop;
+import org.kemy.basicsOfOop.sixthTask.sweetStuf.Marshmallow;
+
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
         Present present = new Present(new HashMap<>(), BigDecimal.valueOf(0));
-        Sweet marshmallow = Sweet.Builder
+        Marshmallow marshmallow = Marshmallow.Builder
                 .create()
                 .withName("marshmallow")
                 .withPrice(BigDecimal.valueOf(1.22))
-                .withQuantity(100)
-                .withBrandOfSweet("Spartak")
+                .withCalories(120.4)
+                .withSize(2)
                 .build();
-        Sweet candy = Sweet.Builder
+        Lollipop lollipop = Lollipop.Builder
                 .create()
-                .withName("candy")
+                .withName("Lollipop")
                 .withPrice(BigDecimal.valueOf(0.78))
-                .withQuantity(100)
-                .withBrandOfSweet("Kamunarka")
+                .withCalories(90.1)
+                .withColor(Colors.valueOf("GREEN"))
                 .build();
-        Sweet cookie = Sweet.Builder
+        Cookie cookie = Cookie.Builder
                 .create()
                 .withName("cookie")
                 .withPrice(BigDecimal.valueOf(0.78))
-                .withQuantity(100)
-                .withBrandOfSweet("Kamunarka")
+                .withCalories(88)
+                .withSize(3.2)
                 .build();
 
-        Accessories box = Accessories.Builder
+        Box box = Box.Builder
                 .create()
                 .withName("Box")
                 .withPrice(BigDecimal.valueOf(1))
-                .withQuantity(10)
-                .withColor("Grey")
+                .withColor(Colors.valueOf("GREY"))
+                .withVolume(2.5)
                 .build();
-        Accessories paper = Accessories.Builder
+        Paper paper = Paper.Builder
                 .create()
                 .withName("Paper")
                 .withPrice(BigDecimal.valueOf(0.2))
-                .withQuantity(33)
-                .withColor("White")
+                .withColor(Colors.valueOf("WHITE"))
+                .withTypeOfPaper(TypeOfPaper.valueOf("LAMINATED"))
                 .build();
-        Accessories tape = Accessories.Builder
+        Tape tape = Tape.Builder
                 .create()
                 .withName("Tape")
                 .withPrice(BigDecimal.valueOf(0.25))
-                .withQuantity(30)
-                .withColor("Red")
+                .withColor(Colors.valueOf("RED"))
+                .withLength(12.2)
                 .build();
 
-        present.addSweet(candy, 10);
+
+        present.addSweet(lollipop, 10);
         present.addSweet(marshmallow, 5);
         present.addSweet(cookie, 2);
         present.addAccessories(box, 1);

@@ -3,56 +3,21 @@ package org.kemy.basicsOfOop.sixthTask;
 import java.math.BigDecimal;
 
 public class Sweet extends Product implements Cloneable {
-    private String brandOfSweet;
 
+    private double calories;
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-
-        return super.clone();
+    public double getCalories() {
+        return calories;
     }
 
-    public String getBrandOfSweet() {
-        return brandOfSweet;
+    public void setCalories(double calories) {
+        this.calories = calories;
     }
 
-    public Sweet(String name, BigDecimal price, int quantity, String brandOfSweet) {
-        super(name, price, quantity);
-        this.brandOfSweet = brandOfSweet;
+    public Sweet(String name, BigDecimal price, double calories) {
+        super(name, price);
+        this.calories = calories;
     }
 
-    public static class Builder {
-        private String name;
-        private BigDecimal price;
-        private int quantity;
-        private String brandOfSweet;
 
-        public Sweet build() {
-            return new Sweet(name, price, quantity, brandOfSweet);
-        }
-
-        public static Builder create() {
-            return new Builder();
-        }
-
-        public Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder withPrice(BigDecimal price) {
-            this.price = price;
-            return this;
-        }
-
-        public Builder withQuantity(int quantity) {
-            this.quantity = quantity;
-            return this;
-        }
-
-        public Builder withBrandOfSweet(String brandOfSweet) {
-            this.brandOfSweet = brandOfSweet;
-            return this;
-        }
-    }
 }

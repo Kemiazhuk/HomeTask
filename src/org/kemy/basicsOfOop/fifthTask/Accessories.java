@@ -1,7 +1,5 @@
 package org.kemy.basicsOfOop.fifthTask;
 
-import org.kemy.basicsOfOop.fifthTask.plants.Colors;
-
 import java.math.BigDecimal;
 
 public class Accessories extends Product  {

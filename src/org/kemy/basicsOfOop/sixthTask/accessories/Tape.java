@@ -1,7 +1,7 @@
-package org.kemy.basicsOfOop.fifthTask.accessories;
+package org.kemy.basicsOfOop.sixthTask.accessories;
 
-import org.kemy.basicsOfOop.fifthTask.Accessories;
-import org.kemy.basicsOfOop.fifthTask.Colors;
+import org.kemy.basicsOfOop.sixthTask.Accessories;
+import org.kemy.basicsOfOop.sixthTask.Colors;
 
 import java.math.BigDecimal;
 
@@ -15,7 +15,7 @@ public class Tape extends Accessories {
         private double length;
 
         public Tape build() {
-            return new Tape(this.name, this.price, this.color,this.length);
+            return new Tape(this.name, this.price, this.color, this.length);
         }
 
         public static Builder create() {
@@ -38,7 +38,7 @@ public class Tape extends Accessories {
             return this;
         }
 
-        public Builder withLength (double length){
+        public Builder withLength(double length) {
             this.length = length;
             return this;
         }
@@ -57,5 +57,4 @@ public class Tape extends Accessories {
         super(name, price, color);
         this.length = length;
     }
-
 }
