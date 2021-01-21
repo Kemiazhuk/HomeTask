@@ -2,7 +2,7 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 
-public class Accessories extends Product  {
+public class Accessories extends Product {
     private Colors color;
 
 
@@ -11,10 +11,11 @@ public class Accessories extends Product  {
         this.color = color;
     }
 
+    public Colors getColor() {
+        return color;
+    }
 
-
-    @Override
-    public String toString() {
-        return " " + color + " " + name;
+    public void setColor(Colors color) {
+        this.color = color;
     }
 }

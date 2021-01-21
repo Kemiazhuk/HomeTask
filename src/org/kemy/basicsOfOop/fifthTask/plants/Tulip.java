@@ -6,7 +6,6 @@ import org.kemy.basicsOfOop.fifthTask.Plant;
 import java.math.BigDecimal;
 
 public class Tulip extends Plant {
-    private Colors color;
     private int flowerLeaves;
 
     public static class Builder {
@@ -57,14 +56,6 @@ public class Tulip extends Plant {
 
     }
 
-    public Colors getColor() {
-        return color;
-    }
-
-    public void setColor(Colors color) {
-        this.color = color;
-    }
-
     public int getFlowerLeaves() {
         return flowerLeaves;
     }
@@ -74,8 +65,7 @@ public class Tulip extends Plant {
     }
 
     public Tulip(String name, BigDecimal price, double lengthStalk, int freshness, Colors color, int flowerLeaves) {
-        super(name, price, lengthStalk, freshness);
-        this.color = color;
+        super(name, price, lengthStalk, freshness, color);
         this.flowerLeaves = flowerLeaves;
     }
 }

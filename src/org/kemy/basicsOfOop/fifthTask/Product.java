@@ -3,8 +3,8 @@ package org.kemy.basicsOfOop.fifthTask;
 import java.math.BigDecimal;
 
 public class Product {
-    public String name;
-    public BigDecimal price;
+    private String name;
+    private BigDecimal price;
 
 
     public Product(String name, BigDecimal price) {
@@ -26,6 +26,11 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return name.toString();
     }
 }
 
