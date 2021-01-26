@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Tulip extends Plant {
     private int flowerLeaves;
 
-    public static class Builder extends Plant.Builder{
+    public static class Builder extends Plant.Builder<Builder>{
         protected int flowerLeaves;
 
         public Tulip build() {
@@ -16,7 +16,7 @@ public class Tulip extends Plant {
         }
 
         public static Builder create() {
-            return new Builder();
+            return new Tulip.Builder();
         }
 
         public Builder withFlowerLeaves(int flowerLeaves) {

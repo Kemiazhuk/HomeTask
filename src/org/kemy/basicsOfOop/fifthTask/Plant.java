@@ -18,19 +18,19 @@ public class Plant extends Product {
             return new Plant(name, price, this.lengthStalk, this.freshness, this.color);
         }
 
-        public Builder withLengthStalk(double lengthStalk) {
+        public T withLengthStalk(double lengthStalk) {
             this.lengthStalk = lengthStalk;
-            return this;
+            return (T) this;
         }
 
-        public Builder withFreshness(int freshness) {
+        public T withFreshness(int freshness) {
             this.freshness = freshness;
-            return this;
+            return (T) this;
         }
 
-        public Builder withColor(Colors color) {
+        public T withColor(Colors color) {
             this.color = color;
-            return this;
+            return (T) this;
         }
 
     }

@@ -8,12 +8,13 @@ import org.kemy.basicsOfOop.fifthTask.plants.Rose;
 import org.kemy.basicsOfOop.fifthTask.plants.Tulip;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
 
-        Bouquet bouquet = new Bouquet(new HashMap<>(), BigDecimal.valueOf(0));
+        Bouquet bouquet = new Bouquet(new ArrayList<Product>(),new ArrayList<Integer>(), new BigDecimal("0"));
 
         Product rose = Rose.Builder
                 .create()
@@ -46,14 +47,14 @@ public class Main {
                 .create()
                 .withName("paper")
                 .withPrice(BigDecimal.valueOf(3.03))
-                .withColor(Colors.valueOf("WHITE"))
+                .withAccessoriesColor(Colors.valueOf("WHITE"))
                 .withTypeOfPaper(TypeOfPaper.valueOf("GLITTER"))
                 .build();
         Tape tape = Tape.Builder
                 .create()
                 .withName("tape")
                 .withPrice(BigDecimal.valueOf(2.02))
-                .withColor(Colors.valueOf("RED"))
+                .withAccessoriesColor(Colors.valueOf("RED"))
                 .withLength(11.2)
                 .build();
 

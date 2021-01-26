@@ -2,26 +2,28 @@ package org.kemy.basicsOfOop.fifthTask;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Bouquet {
-    private HashMap<Product,Integer> allProducts;
+    private ArrayList<Product> allProducts;
+    private ArrayList<Integer> allQuantityProducts;
     private BigDecimal priceBouquet;
 
-
-    public Bouquet(HashMap<Product,Integer> allProducts, BigDecimal priceBouquet) {
+    public Bouquet(ArrayList<Product> allProducts, ArrayList<Integer> allQuantityProducts, BigDecimal priceBouquet) {
         this.allProducts = allProducts;
         this.priceBouquet = priceBouquet;
+        this.allQuantityProducts = allQuantityProducts;
     }
 
     public void addPlant(Product plant, int quantity) {
-        this.allProducts.put(plant,quantity);
+        this.allProducts.add(plant);
+        this.allQuantityProducts.add(quantity);
         priceBouquet = priceBouquet.add(plant.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 
 
     public void addAccessories(Product accessory, int quantity) {
-        this.allProducts.put(accessory,quantity);
+        this.allProducts.add(accessory);
+        this.allQuantityProducts.add(quantity);
         priceBouquet = priceBouquet.add(accessory.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 
@@ -29,9 +31,17 @@ public class Bouquet {
         return priceBouquet;
     }
 
+    public ArrayList<Product> getAllProducts() {
+        return allProducts;
+    }
+
+    public ArrayList<Integer> getAllQuantityProducts() {
+        return allQuantityProducts;
+    }
+
     @Override
     public String toString() {
-        return allProducts +
+        return allProducts + " " + allQuantityProducts +
                 " priceBouquet= " + priceBouquet;
     }
 }

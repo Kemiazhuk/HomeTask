@@ -8,34 +8,15 @@ import java.math.BigDecimal;
 public class Paper extends Accessories {
     private TypeOfPaper typeOfPaper;
 
-    public static class Builder {
-        private String name;
-        private BigDecimal price;
-        private Colors color;
+    public static class Builder extends Accessories.Builder<Builder>{
         private TypeOfPaper typeOfPaper;
 
         public Paper build() {
-            return new Paper(this.name, this.price, this.color,this.typeOfPaper);
+            return new Paper(name, price, color,this.typeOfPaper);
         }
 
         public static Builder create() {
-            return new Builder();
-        }
-
-        public Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder withPrice(BigDecimal price) {
-            this.price = price;
-            return this;
-        }
-
-
-        public Builder withColor(Colors color) {
-            this.color = color;
-            return this;
+            return new Paper.Builder();
         }
 
         public Builder withTypeOfPaper (TypeOfPaper typeOfPaper){

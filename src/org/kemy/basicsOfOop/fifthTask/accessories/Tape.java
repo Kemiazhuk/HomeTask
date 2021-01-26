@@ -8,34 +8,15 @@ import java.math.BigDecimal;
 public class Tape extends Accessories {
     private double length;
 
-    public static class Builder {
-        private String name;
-        private BigDecimal price;
-        private Colors color;
-        private double length;
+    public static class Builder extends Accessories.Builder<Builder>  {
+        protected double length;
 
         public Tape build() {
-            return new Tape(this.name, this.price, this.color,this.length);
+            return new Tape(name, price, color,this.length);
         }
 
         public static Builder create() {
-            return new Builder();
-        }
-
-        public Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder withPrice(BigDecimal price) {
-            this.price = price;
-            return this;
-        }
-
-
-        public Builder withColor(Colors color) {
-            this.color = color;
-            return this;
+            return new Tape.Builder();
         }
 
         public Builder withLength (double length){
