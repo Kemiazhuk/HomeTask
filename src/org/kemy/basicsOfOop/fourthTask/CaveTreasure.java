@@ -12,6 +12,7 @@ import java.util.*;
 public class CaveTreasure {
     private ArrayList<Treasure> allTreasure;
     private Treasure mostExpensiveTreasure;
+    private BigDecimal sum;
 
     public CaveTreasure() throws IOException {
         this.allTreasure = new ArrayList<>();
@@ -21,11 +22,9 @@ public class CaveTreasure {
     private void createCaveTreasure() throws IOException {
         BufferedReader buffer = new BufferedReader(new FileReader("src/org/kemy/basicsOfOop/fourthTask/Cave.txt"));
         String str = buffer.readLine();
-        BigDecimal expensive = new BigDecimal("-1");
         while (str != null) {
             String[] treasureStr = str.split(" ");
-            BigDecimal tempCost = new BigDecimal(treasureStr[2]);
-            Treasure treasure = new Treasure(treasureStr[0], MaterialTreasure.valueOf(treasureStr[1]), tempCost);
+            Treasure treasure = new Treasure(treasureStr[0], MaterialTreasure.valueOf(treasureStr[1]), new BigDecimal(treasureStr[2]));
             allTreasure.add(treasure);
             str = buffer.readLine();
         }
@@ -68,7 +67,7 @@ public class CaveTreasure {
     }
 
     public ArrayList<Treasure> worthOfTreasures(BigDecimal searchSum) {
-        BigDecimal sum = new BigDecimal("0");
+       sum = new BigDecimal("0");
         ArrayList<Treasure> tempTreasure = new ArrayList<>();
         ArrayList<Integer> index = new ArrayList<>();
         for (int i = 0; i < allTreasure.size(); i++) {
@@ -77,11 +76,11 @@ public class CaveTreasure {
         Collections.shuffle(index);
         boolean[] existTreasure;
         existTreasure = new boolean[allTreasure.size()];
-        findSetTreasure(0, searchSum, existTreasure, index, tempTreasure, sum);
+        findSetTreasure(0, searchSum, existTreasure, index, tempTreasure);
         return tempTreasure;
     }
 
-    private void findSetTreasure(int start, BigDecimal worth, boolean[] existTreasure, ArrayList<Integer> index, ArrayList<Treasure> tempTreasure, BigDecimal sum) {
+    private void findSetTreasure(int start, BigDecimal worth, boolean[] existTreasure, ArrayList<Integer> index, ArrayList<Treasure> tempTreasure) {
 
         if (sum.compareTo(worth) > 0) {
             return;
@@ -97,7 +96,7 @@ public class CaveTreasure {
                 existTreasure[index.get(i)] = true;
                 tempTreasure.add(allTreasure.get(index.get(i)));
                 sum = sum.add(allTreasure.get(index.get(i)).getCost());
-                findSetTreasure(index.get(i), worth, existTreasure, index, tempTreasure, sum);
+                findSetTreasure(index.get(i), worth, existTreasure, index, tempTreasure);
                 if (sum.compareTo(worth) == 0) {
                     return;
                 }

@@ -1,12 +1,54 @@
 package org.kemy.basicsOfOop.fifthTask;
 
+import org.kemy.basicsOfOop.fifthTask.plants.Peony;
+
 import java.math.BigDecimal;
 
 public class Plant extends Product {
-
     private double lengthStalk;
     private int freshness;
     private Colors color;
+
+//    public Plant(Product build, double lengthStalk, int freshness, Colors color) {
+//        super(build.getName(), build.getPrice());
+//        this.lengthStalk = lengthStalk;
+//        this.freshness = freshness;
+//        this.color = color;
+//    }
+
+
+    public static class Builder extends Product.Builder {
+        private double lengthStalk;
+        private int freshness;
+        private Colors color;
+
+        public Builder() {
+            super();
+        }
+
+        public Plant build() {
+            return new Plant(super.build(), this.lengthStalk, this.freshness, this.color);
+        }
+
+        public static Builder create() {
+            return new Builder();
+        }
+
+        public Builder withLengthStalk(double lengthStalk) {
+            this.lengthStalk = lengthStalk;
+            return this;
+        }
+
+        public Builder withFreshness(int freshness) {
+            this.freshness = freshness;
+            return this;
+        }
+
+        public Builder withColor(Colors color) {
+            this.color = color;
+            return this;
+        }
+    }
 
     public Plant(String name, BigDecimal price, double lengthStalk, int freshness, Colors color) {
         super(name, price);

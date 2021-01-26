@@ -8,46 +8,50 @@ import java.math.BigDecimal;
 public class Rose extends Plant {
     private double lengthThorns;
 
-    public static class Builder {
-        private String name;
-        private BigDecimal price;
-        private double lengthStalk;
-        private int freshness;
-        private Colors color;
+
+    public static class Builder extends Plant.Builder {
+//        private String name;
+//        private BigDecimal price;
+//        private double lengthStalk;
+//        private int freshness;
+//        private Colors color;
         private double lengthThorns;
 
+        public Builder (){
+            super();
+        }
         public Rose build() {
-            return new Rose(this.name, this.price, this.lengthStalk, this.freshness, this.color, this.lengthThorns);
+            return new Rose(super.build(),this.lengthThorns);
         }
 
         public static Builder create() {
             return new Builder();
         }
 
-        public Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder withPrice(BigDecimal price) {
-            this.price = price;
-            return this;
-        }
-
-        public Builder withLengthStalk(double lengthStalk) {
-            this.lengthStalk = lengthStalk;
-            return this;
-        }
-
-        public Builder withFreshness(int freshness) {
-            this.freshness = freshness;
-            return this;
-        }
-
-        public Builder withColor(Colors color) {
-            this.color = color;
-            return this;
-        }
+//        public Builder withName(String name) {
+//            this.name = name;
+//            return this;
+//        }
+//
+//        public Builder withPrice(BigDecimal price) {
+//            this.price = price;
+//            return this;
+//        }
+//
+//        public Builder withLengthStalk(double lengthStalk) {
+//            this.lengthStalk = lengthStalk;
+//            return this;
+//        }
+//
+//        public Builder withFreshness(int freshness) {
+//            this.freshness = freshness;
+//            return this;
+//        }
+//
+//        public Builder withColor(Colors color) {
+//            this.color = color;
+//            return this;
+//        }
 
         public Builder withLengthThorns(double lengthThorns) {
             this.lengthThorns = lengthThorns;
