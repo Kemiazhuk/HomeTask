@@ -9,29 +9,14 @@ public class Plant extends Product {
     private int freshness;
     private Colors color;
 
-//    public Plant(Product build, double lengthStalk, int freshness, Colors color) {
-//        super(build.getName(), build.getPrice());
-//        this.lengthStalk = lengthStalk;
-//        this.freshness = freshness;
-//        this.color = color;
-//    }
-
 
     public static class Builder extends Product.Builder {
-        private double lengthStalk;
-        private int freshness;
-        private Colors color;
-
-        public Builder() {
-            super();
-        }
+        public double lengthStalk;
+        public int freshness;
+        public Colors color;
 
         public Plant build() {
-            return new Plant(super.build(), this.lengthStalk, this.freshness, this.color);
-        }
-
-        public static Builder create() {
-            return new Builder();
+            return new Plant(name, price, this.lengthStalk, this.freshness, this.color);
         }
 
         public Builder withLengthStalk(double lengthStalk) {
@@ -48,7 +33,12 @@ public class Plant extends Product {
             this.color = color;
             return this;
         }
+
+//        public static Builder create() {
+//            return new Plant.Builder();
+//        }
     }
+
 
     public Plant(String name, BigDecimal price, double lengthStalk, int freshness, Colors color) {
         super(name, price);

@@ -6,19 +6,16 @@ public class Product {
     private String name;
     private BigDecimal price;
 
-    public static class Builder{
-        private String name;
-        private BigDecimal price;
+    public static class Builder {
+        public String name;
+        public BigDecimal price;
 
-        public Builder() {
-        }
+//        public static Builder create() {
+//            return new Builder();
+//        }
 
         public Product build() {
             return new Product(this.name, this.price);
-        }
-
-        public static Builder create() {
-            return new Builder();
         }
 
         public Builder withName(String name) {
@@ -36,6 +33,7 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
 
     public String getName() {
         return name;

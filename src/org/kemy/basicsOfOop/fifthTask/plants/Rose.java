@@ -10,48 +10,15 @@ public class Rose extends Plant {
 
 
     public static class Builder extends Plant.Builder {
-//        private String name;
-//        private BigDecimal price;
-//        private double lengthStalk;
-//        private int freshness;
-//        private Colors color;
-        private double lengthThorns;
-
-        public Builder (){
-            super();
-        }
-        public Rose build() {
-            return new Rose(super.build(),this.lengthThorns);
-        }
+        public double lengthThorns;
 
         public static Builder create() {
-            return new Builder();
+            return new Rose.Builder();
         }
 
-//        public Builder withName(String name) {
-//            this.name = name;
-//            return this;
-//        }
-//
-//        public Builder withPrice(BigDecimal price) {
-//            this.price = price;
-//            return this;
-//        }
-//
-//        public Builder withLengthStalk(double lengthStalk) {
-//            this.lengthStalk = lengthStalk;
-//            return this;
-//        }
-//
-//        public Builder withFreshness(int freshness) {
-//            this.freshness = freshness;
-//            return this;
-//        }
-//
-//        public Builder withColor(Colors color) {
-//            this.color = color;
-//            return this;
-//        }
+        public Rose build() {
+            return new Rose(name, price, lengthStalk, freshness, color, this.lengthThorns);
+        }
 
         public Builder withLengthThorns(double lengthThorns) {
             this.lengthThorns = lengthThorns;
@@ -59,6 +26,8 @@ public class Rose extends Plant {
         }
 
     }
+
+
 
     public Rose(String name, BigDecimal price, double lengthStalk, int freshness, Colors color, Double lengthThorns) {
         super(name, price, lengthStalk, freshness, color);
