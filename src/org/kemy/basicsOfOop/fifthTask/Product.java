@@ -6,13 +6,9 @@ public class Product {
     private String name;
     private BigDecimal price;
 
-    public static class Builder {
-        public String name;
-        public BigDecimal price;
-
-//        public static Builder create() {
-//            return new Builder();
-//        }
+    public static class Builder<T extends Builder>{
+        protected String name;
+        protected BigDecimal price;
 
         public Product build() {
             return new Product(this.name, this.price);
@@ -29,7 +25,7 @@ public class Product {
         }
     }
 
-    public Product(String name, BigDecimal price) {
+    protected Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
     }

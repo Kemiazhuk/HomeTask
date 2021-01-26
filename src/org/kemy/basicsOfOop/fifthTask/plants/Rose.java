@@ -6,10 +6,10 @@ import org.kemy.basicsOfOop.fifthTask.Plant;
 import java.math.BigDecimal;
 
 public class Rose extends Plant {
-    private double lengthThorns;
+    protected double lengthThorns;
 
 
-    public static class Builder extends Plant.Builder {
+    public static class Builder extends Plant.Builder<Builder> {
         public double lengthThorns;
 
         public static Builder create() {
@@ -26,7 +26,6 @@ public class Rose extends Plant {
         }
 
     }
-
 
 
     public Rose(String name, BigDecimal price, double lengthStalk, int freshness, Colors color, Double lengthThorns) {

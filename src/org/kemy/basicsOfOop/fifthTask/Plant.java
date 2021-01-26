@@ -1,6 +1,5 @@
 package org.kemy.basicsOfOop.fifthTask;
 
-import org.kemy.basicsOfOop.fifthTask.plants.Peony;
 
 import java.math.BigDecimal;
 
@@ -10,10 +9,10 @@ public class Plant extends Product {
     private Colors color;
 
 
-    public static class Builder extends Product.Builder {
-        public double lengthStalk;
-        public int freshness;
-        public Colors color;
+    public static class Builder<T extends Plant.Builder> extends Product.Builder<T> {
+        protected double lengthStalk;
+        protected int freshness;
+        protected Colors color;
 
         public Plant build() {
             return new Plant(name, price, this.lengthStalk, this.freshness, this.color);
@@ -34,13 +33,10 @@ public class Plant extends Product {
             return this;
         }
 
-//        public static Builder create() {
-//            return new Plant.Builder();
-//        }
     }
 
 
-    public Plant(String name, BigDecimal price, double lengthStalk, int freshness, Colors color) {
+    protected Plant(String name, BigDecimal price, double lengthStalk, int freshness, Colors color) {
         super(name, price);
         this.lengthStalk = lengthStalk;
         this.freshness = freshness;
