@@ -5,12 +5,31 @@ import org.kemy.string.StringHomeTask5;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 
 public class Main {
-
+//    public static class Account{
+//        private T value;
+//
+//        public T getValue() {
+//            return value;
+//        }
+//
+//        public void setValue(T value) {
+//            this.value = value;
+//        }
+//    }
+//
+//    public static class Name extends Account{
+//
+//    }
 
     public static void main(String[] args) throws IOException {
+
+//        ArrayList<? super Name> n = new ArrayList<Account>();
+//        ArrayList<? extends Account> f =new ArrayList<Name>();
+
 //        LinearPrograms1 prog1 = new LinearPrograms1();
 //        System.out.println("z = " + prog1.calc());
 //

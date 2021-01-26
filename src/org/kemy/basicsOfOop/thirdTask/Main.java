@@ -4,16 +4,14 @@ import org.kemy.Input;
 
 public class Main {
     public static void main(String[] args) {
-//        calendar.checkTheDayAndAdd(DaysOfTheWeek.MONDAY, "some regular day");
-//        calendar.checkTheDayAndAdd(DaysOfTheWeek.FRIDAY, "last working day");
-//        calendar.checkTheDayAndAdd(DaysOfTheWeek.SUNDAY, "good day for relax");
-//        calendar.checkTheDayAndAdd(DaysOfTheWeek.SATURDAY, "first rest day");
+
         System.out.println("Enter what year do you need");
         int year = Input.inputInt();
         Calendar calendar = new Calendar(year);
         String dayForNote = null;
         int month = 0;
         int day = 0;
+
         System.out.println("Enter what day do you need to add notes MM:DD");
         while (dayForNote == null) {
             try {
@@ -26,15 +24,38 @@ public class Main {
                 System.out.println("Enter in use the required format");
             }
         }
+
         System.out.println("Enter notes for this day");
         calendar.addNotesInDay(day, month, year, Input.inputStr());
+
+
         System.out.println("What day you want to declare a holiday");
         System.out.println("Enter number of month");
         month = Input.inputInt()-1;
         System.out.println("Enter number day of this month");
         day = Input.inputInt()-1;
-        calendar.declareDayHoliday(day,month,year);
-        calendar.findAllSaturdaySunday();
+        System.out.println(calendar.declareDayHoliday(day,month,year).toString());
+
+        System.out.println("What day do you need");
+        System.out.println("Enter number of month");
+        month = Input.inputInt()-1;
+        System.out.println("Enter number day of this month");
+        day = Input.inputInt()-1;
+        String note = calendar.seeNoteForThisDay(day,month,year);
+        if (note == null){
+            System.out.println("You  don't have any notes on this day");
+            System.out.println("Enter 0 if you want to add note");
+            int k = Input.inputInt();
+            if (k ==0){
+                System.out.println("Enter note");
+                calendar.addNotesInDay(day, month, year, Input.inputStr());
+            }
+        }
+        System.out.println("Enter 0 if you want to see all holidays");
+        int k = Input.inputInt();
+        if (k ==0){
+            System.out.println(calendar.findAllSaturdaySunday().toString());
+        }
 
 
     }

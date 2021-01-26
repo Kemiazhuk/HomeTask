@@ -24,12 +24,14 @@ public class Main {
             i = Input.inputInt();
             if (i == 1) {
                 System.out.println("All treasure");
-                caveTreasure.caveShowHisTreasure();
+               for (Treasure t : caveTreasure.caveShowHisTreasure()){
+                   System.out.println(t.toString());
+               }
             } else if (i == 2) {
                 System.out.println("More expensive treasure is:");
                 System.out.println(caveTreasure.getMostExpensiveTreasure());
             } else if (i == 3) {
-                System.out.println("Enter how much many you have for a treasure");
+                System.out.println("Enter how much money you have for a treasure");
                 ArrayList<Treasure> treasureForClint = caveTreasure.worthOfTreasures(Input.inputBigDec());
                 if (treasureForClint.size() > 0) {
                     for (Treasure t : treasureForClint) {

@@ -44,6 +44,6 @@ public class Day {
     @Override
     public String toString() {
         return daysOfTheWeek + " " + numberInMonth +
-                " " + month + " Note " + note;
+                " " + month + " Note: " + note;
     }
 }
