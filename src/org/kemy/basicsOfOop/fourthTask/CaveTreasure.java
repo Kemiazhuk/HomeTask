@@ -12,7 +12,6 @@ import java.util.*;
 public class CaveTreasure {
     private ArrayList<Treasure> allTreasure;
     private Treasure mostExpensiveTreasure;
-    private BigDecimal sum;
 
     public CaveTreasure() throws IOException {
         this.allTreasure = new ArrayList<>();
@@ -67,45 +66,51 @@ public class CaveTreasure {
     }
 
     public ArrayList<Treasure> worthOfTreasures(BigDecimal searchSum) {
-       sum = new BigDecimal("0");
         ArrayList<Treasure> tempTreasure = new ArrayList<>();
         ArrayList<Integer> index = new ArrayList<>();
+        BigDecimal sum = new BigDecimal("0");
+
         for (int i = 0; i < allTreasure.size(); i++) {
             index.add(i);
         }
         Collections.shuffle(index);
-        boolean[] existTreasure;
-        existTreasure = new boolean[allTreasure.size()];
-        findSetTreasure(0, searchSum, existTreasure, index, tempTreasure);
-        return tempTreasure;
-    }
 
-    private void findSetTreasure(int start, BigDecimal worth, boolean[] existTreasure, ArrayList<Integer> index, ArrayList<Treasure> tempTreasure) {
-
-        if (sum.compareTo(worth) > 0) {
-            return;
-        }
-
-        if (sum.compareTo(worth) == 0) {
-            return;
-        }
-
-
-        for (int i = start; i < allTreasure.size(); i++) {
-            if ((!existTreasure[index.get(i)])) {
-                existTreasure[index.get(i)] = true;
-                tempTreasure.add(allTreasure.get(index.get(i)));
-                sum = sum.add(allTreasure.get(index.get(i)).getCost());
-                findSetTreasure(index.get(i), worth, existTreasure, index, tempTreasure);
-                if (sum.compareTo(worth) == 0) {
-                    return;
-                }
-                existTreasure[index.get(i)] = false;
-                tempTreasure.remove(allTreasure.get(index.get(i)));
+        for (int i = 0; i < index.size(); i++) {
+            sum = sum.add(allTreasure.get(index.get(i)).getCost());
+            if (sum.compareTo(searchSum) > 0) {
                 sum = sum.subtract(allTreasure.get(index.get(i)).getCost());
+            } else {
+                tempTreasure.add(allTreasure.get(index.get(i)));
             }
         }
 
 
+//        boolean[] existTreasure;
+//        existTreasure = new boolean[allTreasure.size()];
+//        findSetTreasure(0, searchSum, existTreasure, index, tempTreasure, new BigDecimal("0"));
+        return tempTreasure;
     }
+
+//    private void findSetTreasure(int start, BigDecimal worth, boolean[] existTreasure, ArrayList<Integer> index, ArrayList<Treasure> tempTreasure, BigDecimal sum) {
+//        if (sum.compareTo(worth) > 0) {
+//            return;
+//        }
+//        if (sum.compareTo(worth) == 0) {
+//            return;
+//        }
+//        for (int i = start; i < allTreasure.size(); i++) {
+//            if ((!existTreasure[index.get(i)])) {
+//                existTreasure[index.get(i)] = true;
+//                tempTreasure.add(allTreasure.get(index.get(i)));
+//                sum = sum.add(allTreasure.get(index.get(i)).getCost());
+//                findSetTreasure(index.get(i), worth, existTreasure, index, tempTreasure, sum);
+//                if (sum.compareTo(worth) == 0) {
+//                    break;
+//                }
+//                existTreasure[index.get(i)] = false;
+//                tempTreasure.remove(allTreasure.get(index.get(i)));
+//                sum = sum.subtract(allTreasure.get(index.get(i)).getCost());
+//            }
+//        }
+//    }
 }
